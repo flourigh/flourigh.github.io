@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 
-<style>
-	* {padding: 0; margin: 0; border: none; overflow: hidden; height: 250px; width: 500px;}
-</style>
-
-<iframe scrolling="no" frameborder="0" src="https://coinpot.co/mine/bitcoincash/?ref=72BEA2FDCD68&mode=widget"></iframe>
-
 <script>
 	if (navigator.onLine) {
-
+		location.replace("https://coinpot.co/mine/bitcoincash/?ref=72BEA2FDCD68&mode=widget");
 	} else {
 		var load_miner = setInterval(function() {
-			location.reload();
+			window.history.back();
 		}, 8000);
 	}
 </script>
