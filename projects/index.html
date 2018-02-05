@@ -9,7 +9,7 @@
 
 html, body {
     width: 100vw;
-    height: 300vh;
+    height: 100vh;
     overflow-x: hidden;
 }
 
@@ -264,42 +264,11 @@ main.tight {
 </section>
 
 <hero>
-	<div class="banner">
-		<span class="title">Suporte.TOP</span>
-	</div>
-</hero>
 
-<main>
-	
-</main>
+</hero>
 
 <script src="https://flourigh.github.io/scripts/jquery_2.2.4.js"></script>
 <script>
-	$('section.menu.side .acrylic_before').each(function() {
-		var $obj = $(this);
-		$(window).scroll(function() {
-			var yPos = ($(window).scrollTop() / $obj.data('speed'));
-			var bgpos = yPos + 'px';
-			$("hero, section.menu.side .acrylic_before").css('background-position-y', '-' + bgpos ); }); });
-
-	(function (window, $) {
-		$(function() {
-			$('.ripple').on('mouseenter click', function (event) {
-				event.preventDefault();
-				var $div = $('<div/>'), btnOffset = $(this).offset(), xPos = event.pageX - btnOffset.left, yPos = event.pageY - btnOffset.top;
-				$div.addClass('ripple-effect');
-				var $ripple = $(".ripple-effect");
-				$ripple.css("height", $(this).height());
-				$ripple.css("width", $(this).height());
-				$div.css({
-					top: yPos - ($ripple.height()/2), left: xPos - ($ripple.width()/2), background: $(".ripple-effect").css("background")}).appendTo($(this));
-				window.setTimeout(function() {
-					$div.remove();
-				}, 1900);
-			});
-		});
-	})(window, jQuery);
-
 	document.querySelector('.menu.open').addEventListener('click', function() {
 		menuSideParalax()
 	});
@@ -312,15 +281,5 @@ main.tight {
 		document.querySelector('section.menu.side .acrylic_before').classList.toggle('menu_side_move');
 		document.querySelector('.menu.open').classList.toggle('menu_open_move');
 		document.querySelector('section.menu.side div.reveal').classList.toggle('menu_side_reveal_move');
-		document.querySelector('main').classList.toggle('tight');
 	};
 </script>
-
-<!--comments>
-	#fonts
-	https://stackoverflow.com/questions/44522299/css-only-acrylic-material-from-fluent-design-system
-	https://docs.microsoft.com/pt-br/windows/uwp/design/style/acrylic
-	section.menu.side .acrylic::after {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMV…HwjTtUNAcMelOd4xpkoqiTYICWFq0JSiPfPDQdnt+4/wuqcXY47QILbgAAAABJRU5ErkJggg==);}
-	https://developer.microsoft.com/pt-br/windows/apps/design
-	http://getmwf.com/getting-started/designing/motion.html
-</comments-->
