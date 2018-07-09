@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <meta charset="utf-8" />
 <title>Roberto Monteiro</title>
-<script>
+
+<style>
+  * {padding: 0; margin: 0;}
+  iframe {width: 100vw; height: 100vh;}
+</style>
+
+<!--script>
   window.location.href = "https://www.facebook.com/flourighcom/?ref=flourigh";
+</script-->
+
+<iframe id="forum_embed" src="javascript:void(0)" scrolling="no" frameborder="0"></iframe>
+<script type="text/javascript">
+  document.getElementById('forum_embed').src = 'https://flourigh.github.io/&uri=' + encodeURIComponent(window.location.href);
 </script>
