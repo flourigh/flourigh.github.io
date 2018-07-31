@@ -105,14 +105,17 @@
 
 <script>
     $("section.midlebottom > div.list div.iten svg.instagram").click(function() {
-        window.open("https://www.instagram.com/flourigh/", "_blank"); });
+        window.open("https://flourigh.com/instagram", "_blank"); });
 
     $("section.midlebottom > div.list div.iten svg.facebook").click(function() {
-        window.open("https://www.facebook.com/flourighcom/", "_blank"); });
+        window.open("https://flourigh.com/facebook", "_blank"); });
 
     $("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
-        window.open("https://robertomonteiro.top", "_blank"); });
+        window.open("https://flourigh.com/whatsapp", "_blank"); });
 
     $("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
         $("section.midlebottom").toggleClass("hidden"); });
+
+    $("section.banner img.logotipo, section.container div.close").click(function() {
+	$("section.container").toggleClass("hidden"); });
 </script>
