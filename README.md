@@ -4,9 +4,9 @@
 
 Email: github@flourigh.com
 
-WhatsApp: [55 21 986 762 331](https://api.whatsapp.com/send?phone=5521986762331)
+WhatsApp: [55 21 986 762 331](https://wa.me/5521986762331)
 
-[Facebook](https://www.facebook.com/flourighcom) [Twitter](https://www.twitter.com/flourigh) [Instagram](https://www.instagram.com/flourigh/) [LinkedIn](https://www.linkedin.com/in/flourigh/) [Youtube](https://www.youtube.com/flourigh) [Plus](https://google.com/+FyeFlourigh)
+[Facebook](https://flourigh.com/facebook) [Twitter](https://flourigh.com/twitter) [Instagram](https://flourigh.com/instagram) [LinkedIn](https://flourigh.com/linkedin) [Youtube](https://flourigh.com/youtube) [Plus](https://flourigh.com/plus)
 
 Desenvolvedor Web com diploma na instituição Estácio de Sá focado em linguagem BackEnd e admirado por um FrontEnd com design limpo e agradável.
 
