@@ -66,5 +66,10 @@ async function handleRequest(request) {
 		url.href = "http://forum.netmarble.com/lin2ws_pt/profile/29479928"
 		return Response.redirect(url, 301) }
 
+
+	if (url.pathname.startsWith("/snapchat" || "/snapchat/")) {
+		url.href = "https://app.snapchat.com/web/deeplink/snapcode?type=SVG&username=flourigh"
+		return Response.redirect(url, 301) }
+
 	const response = await fetch(request)
 	return response }
