@@ -80,7 +80,7 @@
 <section class="banner background_animation_element">
     <div class="mask">
         <img class="logotipo cursor_pointer" src="https://dkteclive.000webhostapp.com/favicon.ico" />
-        <span class="logotipo">Roberto Monteiro</span>
+        <span class="logotipo">Roberto Monteiro <script id="dsq-count-scr" src="//flourigh.disqus.com/count.js" async></script></span>
     </div>
 </section>
 
@@ -102,7 +102,7 @@
     <div class="close cursor_pointer">
         <span>X</span>
     </div>
-	<img class="easter_egg" src="https://gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Easter-Pictures-PNG/Purple_Easter_Egg_with_Flowers_PNG_Picture.png?m=1434276686" />
+	<div id="disqus_thread"></div>
 </section>
 
 <script>
@@ -120,4 +120,8 @@
 
     $("section.banner img.logotipo, section.container div.close").click(function() {
 	$("section.container").toggleClass("hidden"); });
+</script>
+<script>
+	/* Disqus */
+	(function() { var d = document, s = d.createElement('script'); s.src = 'https://flourigh.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();
 </script>
