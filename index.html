@@ -1,166 +1,524 @@
 <!DOCTYPE html>
-<title>Roberto Monteiro</title>
 <meta charset="utf-8" />
-<link rel="icon" href="https://dkteclive.000webhostapp.com/favicon.ico" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<script src="https://dkteclive.000webhostapp.com/jquery-3.2.1.slim.min.js"></script>
-<link rel="search" type="application/opensearchdescription+xml" title="Roberto Monteiro" href="https://dkteclive.000webhostapp.com/opensearch.xml" />
-
-<meta name="keywords" content="Criar site, Desenvolver Aplicativo, Consultoria, Informática, Ajuda" />
-<meta name="description" content="Desenvolvedor Web com diploma na instituição Estácio de Sá focado em linguagem BackEnd e admirado por um FrontEnd com design limpo e agradável. Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo. Buscar o novo é um rumo que deve ser tomado." />
-
-<meta property="fb:pages" content="900511406772557" />
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5373675195582411",
-    enable_page_level_ads: true
-  });
-</script>
-
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '444021482703269');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=444021482703269&ev=PageView&noscript=1"
-/></noscript>
+<title>Currículo</title>
+<meta name="description" content="Desenvolvedor Web com diploma na instituição Estácio de Sá focado em linguagem BackEnd e admirado por um FrontEnd com design limpo e agradável." />
+<base href="https://flourigh.github.io/curriculo" />
+<link rel="canonical" href="https://flourigh.github.io/curriculo" />
+<link rel="icon" href="https://flourigh.github.io/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 
 <style>
-    * { padding: 0; margin: 0; text-decoration: none; outline: none; border: none; resize: none; }
-    body { background: #f5f5f5; overflow: hidden; }
+	* {padding: 0; margin: 0; background: #ffffff; list-style: none; text-decoration: none; border: none; outline: none; resize: none;}
+	body {width: 100vw; overflow-x: hidden;}
 
-    .transition_height { transition: height 1s; }
-    .transition_background { transition: background 1s; }
-    .transition_top { transition: top 1s; }
-    .cursor_pointer { cursor: pointer; }
 
-    section.banner { width: 100vw; height: 100vh; position: relative; top: 0; left: 0; }
-    section.banner > div.mask { width: 90vw; max-width: 900px; min-width: 320px; margin: auto; position: relative; top: 25%; text-align: center; }
-    section.banner img.logotipo { box-shadow: 0px 0px 17px -3px #111111; border-radius: 50%; width: 15vw; min-width: 64px; max-width: 165px; position: relative; background: #f5f5f5; margin: auto; display: block; top: -70px; padding: 15px; }
-    section.banner span.logotipo { text-shadow: 0px 0px 7px #111111; color: #f5f5f5; font-size: 10vw; font-family: segoe ui; position: relative; top: -55px; font-weight: 100; }
+	section.one {width: 15cm; margin: 2.5cm auto; font-family: calibri;}
+	section.one span.candidate_name {font-weight: bolder; font-size: 18pt; line-height: 1.2cm;}
+	section.one div.sections {margin-bottom: 0.2cm; font-size: 11pt;}
+	section.one div.sections span.subtitle {font-size: 16pt;}
+	section.one div.sections span.about_work {display: block; margin-bottom: 3px;}
 
-    @media screen and (min-width: 1060px) {
-		section.banner span.logotipo { font-size: 120px; } }
 
-    section.midlebottom { width: 100vw; height: calc(100vh - 90vh); position: absolute; top: 90vh; background: #101010; }
-    section.midlebottom.hidden { background: rgba(255, 255, 255, 0); }
-    section.midlebottom > div.list { position: relative; width: 90vw; max-width: 900px; height: 10vh; margin: auto; }
-    section.midlebottom > div.list div.iten { overflow: hidden; background: #f5f5f5; width: 30%; height: 7vh; position: absolute; bottom: 0px; border-radius: 15px 15px 0px 0px; box-shadow: 0px 0px 17px -3px #111111; }
-    section.midlebottom > div.list div.iten.second { left: calc(50% - 15%); }
-    section.midlebottom > div.list div.iten.third { right: 0px; }
-    section.midlebottom > div.list div.iten:hover { height: 40vh; }
+	section.duo {width: 21cm; margin: 2.54cm auto 0; font-family: segoe ui;}
+	section.duo input, section.duo select, section.duo textarea {background: #ececec;}
+	section.duo input.candidate_name {font-weight: bolder; font-size: 18pt; line-height: 1.2cm; width: 21cm;}
+	section.duo div.sections {margin-bottom: 0.2cm; font-size: 11pt;}
 
-    section.container { position: absolute; width: calc(90vw - 20px); height: calc(95vh - 20px); left: 5vw; background: #2a2e2e; border-radius: 15px 15px 0px 0px; top: 5vh; padding: 10px; overflow-y: auto; }
-    section.container.hidden { top: 100vh; }
-    section.container div.close { position: absolute; right: 10px; top: 10px; font-family: segoe ui; font-size: 2em; color: #101010; background: #efecec; border-radius: 15px; padding: 5px 15px; }
-    section.container div.refer.host { width: 328px; margin: auto; background: #d01a02; text-align: center; border-radius: 3px; margin-top: 10px; }
+	section.duo div.relevant_information div.line_one select.civil_state {width: 2.5cm; margin: 0 0 0 -4px;}
+	section.duo div.relevant_information div.line_one input.birt_date {width: 1.3cm; padding: 0 0 0 10px;}
+	section.duo div.relevant_information div.line_one select.genre {width: 2.3cm;}
 
-    section.container img.easter_egg { width: 480px; position: absolute; left: 36%; top: 16%; }
+	section.duo div.relevant_information div.line_duo input.tel_cel {width: 2.7cm;}
+	section.duo div.relevant_information div.line_duo input.tel_rec {width: 2.7cm;}
+	section.duo div.relevant_information div.line_duo input.email {width: 14.398cm;}
 
-    @-webkit-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
-    @-moz-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
-    @-o-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
-    @keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
-    .background_animation_element { background: linear-gradient(130deg, #2ecc71, #e67e22, #f1c40f, #34495e, #9b59b6, #e74c3c, #3498db, #1abc9c, #e74c3c, #e67e22, #9b59b6, #f1c40f, #2ecc71, #1abc9c, #3498db, #34495e); background-size: 10000vw 10000vh;
-        -webkit-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
-        -moz-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
-        -o-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
-        animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;}
+	section.duo div.relevant_information div.line_tre input.place {width: 4.4cm;}
+	section.duo div.relevant_information div.line_tre input.house {width: 1.7cm;}
+	section.duo div.relevant_information div.line_tre input.subneigh {width: 5.42cm;}
+	section.duo div.relevant_information div.line_tre input.neigh {width: 2.5cm;}
+	section.duo div.relevant_information div.line_tre input.country {width: 3cm;}
+	section.duo div.relevant_information div.line_tre input.city {width: 0.8cm;}
+	section.duo div.relevant_information div.line_tre input.cep {width: 1.71cm;}
+
+	section.duo div.academic_formation div.formations div.formation select.academic_course {width: 3.7cm; margin: 0 0 0 -3px;}
+	section.duo div.academic_formation div.formations div.formation input.academic_course {width: 5.01cm;}
+	section.duo div.academic_formation div.formations div.formation input.formation_date {width: 1.2cm;}
+	section.duo div.academic_formation div.formations div.formation input.academic_institute {width: 9.02cm;}
+
+	section.duo div.complementar_formation div.formations div.formation input.complementar_course {width: 8.73cm;}
+	section.duo div.complementar_formation div.formations div.formation input.course_date {width: 1.2cm;}
+	section.duo div.complementar_formation div.formations div.formation input.complementar_institute {width: 9.027cm;}
+
+	section.duo div.professional_experience div.formations div.formation input.office {width: 8.73cm;}
+	section.duo div.professional_experience div.formations div.formation input.office_date {width: 1.7cm;}
+	section.duo div.professional_experience div.formations div.formation input.office_institute {width: 6.46cm;}
+
+	section.duo div.formations textarea {width: 21cm; height: 1.5cm; min-height: 1.5cm; overflow: hidden;}
+
+	section.duo div.sections span.subtitle {font-size: 16pt;}
+
+	section.duo div.sections span.add {position: relative;}
+	section.duo div.sections span.add.one {left: 50px;}
+	section.duo div.sections span.add.duo {left: 12.5px;}
+	section.duo div.sections span.add.tre {left: 32px;}
+
+	section div.button {width: 100%; background: #ececec; padding: 10px 0px; text-align: center;}
+	section div.button.thin {width: 46%; float: left;}
+	section div.button.thin.first-child {margin-right: 8%;}
+
+
+	@media print { .print_none {display: none;} }
+
+	.display_none {display: none;}
+	.cursor_pointer {cursor: pointer;}
+	.text_align_center {text-align: center;}
+	.text_transform_uppercase {text-transform: uppercase;}
+	.text_transform_lowercase {text-transform: lowercase;}
 </style>
 
-<section class="banner background_animation_element">
-    <div class="mask">
-        <img class="logotipo cursor_pointer" src="https://dkteclive.000webhostapp.com/favicon.ico" />
-        <span class="logotipo">Roberto Monteiro</span>
-    </div>
+<!-- Área de impressão -->
+<section class="one display_none">
+
+	<span class="candidate_name">Nome Completo</span>
+
+	<div class="sections">
+		<div>
+			<span class="civil_state ident_separate">Estado civil</span>
+			<span class="birt_date ident_separate">Idade</span>
+			<span class="genre">Sexo</span>
+		</div>
+
+		<div>
+			<span class="tel_cel ident_separate">Telefone Celular</span>
+			<span class="tel_rec ident_separate">Telefone Recado</span>
+			<span class="email text_transform_lowercase">Email</span>
+		</div>
+
+		<div>
+			<span class="endereco">
+				<span class="place">Logradouro</span>
+				<span class="house comma_separate">Número</span>
+				<span class="subneigh comma_separate">Sub bairro</span>
+				<span class="neigh comma_separate">Bairro</span>
+				<span class="country ident_separate">Município</span>
+				<span class="city text_transform_uppercase comma_separate">Est</span>
+				<span class="cep">CEP</span>
+			</span>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Objetivo Profissional</span>
+		<div>
+			<span class="professional_goal">Cargo pretendido na empresa e por que</span>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Formação Acadêmica</span>
+
+		<div class="academic_formation">
+			<div class="formations">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Formação Complementar</span>
+
+		<div class="complementar_formation">
+			<div class="formations">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Experiência Profissional</span>
+		<div class="professional_experience">
+			<div class="formations">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Competências e Técnicas</span>
+		<div>
+			<span class="skills_knowledge">Tópicos - Conhecimentos</span>
+		</div>
+	</div>
+
+	<div class="sections">
+		<span class="subtitle">Adicionais</span>
+		<div>
+			<span class="more_informations">Informações para vagas específicas</span>
+		</div>
+	</div>
+
+	<div class="print button thin first-child cursor_pointer print_none">Imprimir</div>
+	<div class="preview button thin cursor_pointer print_none">Editar</div>
+
+</section>
+<!-- Área de impressão -->
+
+<!-- Área de preenchimento -->
+<section class="duo print_none">
+	<input class="candidate_name" placeholder="Nome Completo" autofocus />
+
+	<div class="relevant_information sections">
+		<div class="line_one">
+			<select class="civil_state ident_separate">
+				<option>Estado civil</option>
+				<option>Casada</option>
+				<option>Casado</option>
+				<option>Solteira</option>
+				<option>Solteiro</option>
+				<option>Divorciada</option>
+				<option>Divorciado</option>
+				<option>Viuva</option>
+				<option>Viuvo</option>
+			</select>
+			<input type="number" class="birt_date ident_separate text_align_center" placeholder="Idade" />
+			<select class="genre">
+				<option>Sexo</option>
+				<option>Masculino</option>
+				<option>Feminino</option>
+			</select>
+		</div>
+
+		<div class="line_duo">
+			<input class="tel_cel ident_separate" placeholder="Telefone Celular" />
+			<input class="tel_rec ident_separate text_align_center" placeholder="Telefone Recado" />
+			<input class="email" type="email" placeholder="Email" />
+		</div>
+
+		<div class="line_tre">
+			<input class="place" placeholder="Logradouro" />
+			<input class="house comma_separate" type="number" placeholder="Número" />
+			<input class="subneigh comma_separate" placeholder="Sub bairro" />
+			<input class="neigh comma_separate" placeholder="Bairro" />
+			<input class="country ident_separate" placeholder="Município" />
+			<input class="city comma_separate" placeholder="Est" />
+			<input class="cep" placeholder="CEP" />
+		</div>
+	</div>
+
+	<div class="professional_goal sections">
+		<span class="subtitle">Objetivo Profissional</span>
+		<div class="formations">
+			<textarea class="professional_goal" placeholder="Cargo pretendido na empresa e por que"></textarea>
+		</div>
+	</div>
+
+	<div class="academic_formation sections">
+		<span class="subtitle">Formação Acadêmica</span>
+		<span class="add one cursor_pointer">+</span>
+		<div class="formations">
+
+		</div>
+	</div>
+
+	<div class="complementar_formation sections">
+		<span class="subtitle">Formação Complementar</span>
+		<span class="add duo cursor_pointer">+</span>
+		<div class="formations">
+
+		</div>
+	</div>
+
+	<div class="professional_experience sections">
+		<span class="subtitle">Experiência Profissional</span>
+		<span class="add tre cursor_pointer">+</span>
+		<div class="formations">
+
+		</div>
+	</div>
+
+	<div class="skills_knowledge sections">
+		<span class="subtitle">Competências e Técnicas</span>
+		<div class="formations">
+			<textarea class="skills_knowledge" placeholder="Tópicos - Conhecimentos"></textarea>
+		</div>
+	</div>
+
+	<div class="more_informations sections">
+		<span class="subtitle">Adicionais</span>
+		<div class="formations">
+			<textarea class="more_informations" placeholder="Informações para vagas expecíficas"></textarea>
+		</div>
+	</div>
+
+	<div class="preview button cursor_pointer">Revisar</div>
+
+</section>
+<!-- Área de preenchimento -->
+
+<!-- Área de templates -->
+<section class="template academic_formation display_none">
+	<div class="formation">
+		<select class="academic_course">
+			<option>Formação</option>
+			<option>Ensino Fundamental</option>
+			<option>Ensino Médio</option>
+			<option>Técnico em</option>
+			<option>Graduado em</option>
+		</select>
+		<input class="academic_course ident_separate" placeholder="Curso e período" />
+		<input class="formation_date ident_separate text_align_center" type="number" placeholder="Data" />
+		<input class="academic_institute" placeholder="Instituição" />
+		<span class="change up one cursor_pointer">↑</span>
+		<span class="change down one cursor_pointer">↓</span>
+		<span class="remove one cursor_pointer">-</span>
+	</div>
 </section>
 
-<section class="midlebottom transition_background">
-    <div class="list">
-        <div class="iten transition_height cursor_pointer">
-		<svg class="instagram" viewBox="0 0 24 24"><defs><radialGradient id="gradient_instagram" gradientUnits="userSpaceOnUse" cx="0" cy="20" r="20"><stop offset="40%" stop-color="#f8b857" /><stop offset="100%" stop-color="#d23593" /></radialGradient></defs><path fill="url(#gradient_instagram)" d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"></path></svg>
-        </div>
-        <div class="iten second transition_height cursor_pointer">
-		<svg class="facebook" viewBox="-1.4 -1.4 26.667 26.667"><defs><linearGradient id="gradient_facebook"><stop offset="5%" stop-color="#4e69a2" /><stop offset="95%" stop-color="#3b5998" /></linearGradient></defs><path fill="url(#gradient_facebook)" d="M20,2H4C2.9,2,2,2.9,2,4v16c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M18.4,7.4H17c-0.9,0-1,0.3-1,1l0,1.3 h2.1L18,12h-1.9v7h-3.2v-7h-1.2V9.6h1.2V8.1c0-2,0.8-3.1,3.1-3.1h2.4V7.4z"></path></svg>
-        </div>
-        <div class="iten third transition_height cursor_pointer">
-		<svg class="whatsapp" viewBox="0 0 48 48"><g id="surface1"><path style="fill:#FFFFFF;" d="M 4.867188 43.304688 L 7.5625 33.46875 C 5.898438 30.589844 5.027344 27.324219 5.027344 23.980469 C 5.03125 13.515625 13.546875 5 24.015625 5 C 29.09375 5.003906 33.859375 6.980469 37.445313 10.566406 C 41.027344 14.152344 43.003906 18.921875 43 23.992188 C 42.996094 34.460938 34.476563 42.972656 24.015625 42.972656 C 24.011719 42.972656 24.015625 42.972656 24.015625 42.972656 L 24.007813 42.972656 C 20.828125 42.972656 17.707031 42.175781 14.933594 40.664063 Z "></path><path style=" fill:#FFFFFF;" d="M 4.867188 43.804688 C 4.734375 43.804688 4.609375 43.75 4.511719 43.65625 C 4.386719 43.527344 4.339844 43.34375 4.386719 43.171875 L 7.023438 33.535156 C 5.390625 30.628906 4.527344 27.328125 4.527344 23.980469 C 4.53125 13.238281 13.273438 4.5 24.015625 4.5 C 29.222656 4.503906 34.117188 6.53125 37.796875 10.214844 C 41.476563 13.894531 43.503906 18.789063 43.5 23.992188 C 43.496094 34.734375 34.753906 43.472656 24.015625 43.472656 C 20.824219 43.472656 17.671875 42.6875 14.871094 41.195313 L 4.996094 43.785156 C 4.953125 43.796875 4.910156 43.804688 4.867188 43.804688 Z "></path><path style="fill:#f5f5f5;" d="M 24.015625 5 C 29.09375 5.003906 33.859375 6.980469 37.445313 10.566406 C 41.027344 14.152344 43.003906 18.921875 43 23.992188 C 42.996094 34.460938 34.476563 42.972656 24.015625 42.972656 L 24.007813 42.972656 C 20.828125 42.972656 17.707031 42.175781 14.933594 40.664063 L 4.867188 43.304688 L 7.5625 33.46875 C 5.898438 30.589844 5.027344 27.324219 5.027344 23.980469 C 5.03125 13.515625 13.546875 5 24.015625 5 M 24.015625 42.972656 L 24.015625 42.972656 M 24.015625 42.972656 L 24.015625 42.972656 M 24.015625 4 C 12.996094 4 4.03125 12.960938 4.027344 23.980469 C 4.027344 27.347656 4.875 30.664063 6.488281 33.601563 L 3.902344 43.039063 C 3.808594 43.386719 3.90625 43.753906 4.15625 44.007813 C 4.347656 44.199219 4.605469 44.304688 4.867188 44.304688 C 4.953125 44.304688 5.039063 44.292969 5.121094 44.269531 L 14.808594 41.730469 C 17.636719 43.199219 20.808594 43.972656 24.007813 43.976563 C 35.03125 43.976563 43.996094 35.011719 44 23.996094 C 44.003906 18.65625 41.925781 13.636719 38.152344 9.859375 C 34.378906 6.082031 29.355469 4.003906 24.015625 4 Z "></path><path style=" fill:#40C351;" d="M 35.175781 12.832031 C 32.195313 9.851563 28.234375 8.207031 24.019531 8.207031 C 15.316406 8.207031 8.234375 15.28125 8.230469 23.980469 C 8.230469 26.960938 9.066406 29.863281 10.644531 32.375 L 11.019531 32.972656 L 9.425781 38.792969 L 15.398438 37.226563 L 15.976563 37.570313 C 18.398438 39.007813 21.175781 39.769531 24.007813 39.769531 L 24.015625 39.769531 C 32.710938 39.769531 39.789063 32.691406 39.792969 23.992188 C 39.796875 19.777344 38.15625 15.8125 35.175781 12.832031 Z "></path><path style=" fill-rule:evenodd;fill:#FFFFFF;" d="M 19.269531 16.046875 C 18.914063 15.253906 18.539063 15.238281 18.199219 15.226563 C 17.921875 15.214844 17.605469 15.214844 17.289063 15.214844 C 16.976563 15.214844 16.460938 15.332031 16.027344 15.808594 C 15.589844 16.28125 14.363281 17.429688 14.363281 19.765625 C 14.363281 22.097656 16.066406 24.355469 16.300781 24.671875 C 16.539063 24.984375 19.585938 29.929688 24.40625 31.832031 C 28.414063 33.410156 29.230469 33.097656 30.097656 33.019531 C 30.96875 32.9375 32.90625 31.871094 33.300781 30.761719 C 33.695313 29.65625 33.695313 28.707031 33.578125 28.507813 C 33.460938 28.308594 33.144531 28.191406 32.667969 27.953125 C 32.195313 27.714844 29.863281 26.570313 29.425781 26.410156 C 28.992188 26.253906 28.675781 26.175781 28.359375 26.648438 C 28.042969 27.121094 27.132813 28.191406 26.855469 28.507813 C 26.578125 28.824219 26.304688 28.863281 25.828125 28.628906 C 25.355469 28.390625 23.828125 27.890625 22.015625 26.273438 C 20.605469 25.015625 19.652344 23.464844 19.375 22.988281 C 19.097656 22.515625 19.34375 22.257813 19.582031 22.019531 C 19.796875 21.808594 20.058594 21.464844 20.296875 21.1875 C 20.53125 20.910156 20.609375 20.714844 20.769531 20.398438 C 20.925781 20.082031 20.847656 19.804688 20.730469 19.566406 C 20.613281 19.328125 19.691406 16.984375 19.269531 16.046875 Z "></path></g></svg>
-        </div>
-    </div>
+<section class="template academic_formation print display_none">
+	<div class="formation">
+		<span class="academic_course type">Formação</span>
+		<span class="academic_course period ident_separate">curso e período</span>
+		<span class="formation_date ident_separate">Data</span>
+		<span class="academic_institute">Instituição</span>
+	</div>
 </section>
 
-<section class="container hidden transition_top">
-    <div class="close cursor_pointer">
-        <span>X</span>
-    </div>
-	<div id="disqus_thread"></div>
+<section class="template complementar_formation display_none">
+	<div class="formation">
+		<input class="complementar_course ident_separate" placeholder="Curso" />
+		<input class="course_date ident_separate text_align_center" type="number" placeholder="Data" />
+		<input class="complementar_institute" placeholder="Instituição" />
+		<span class="change up one cursor_pointer">↑</span>
+		<span class="change down one cursor_pointer">↓</span>
+		<span class="remove duo cursor_pointer">-</span>
+	</div>
 </section>
 
+<section class="template complementar_formation print display_none">
+	<div class="formation">
+		<span class="complementar_course ident_separate">Curso</span>
+		<span class="course_date ident_separate">Data</span>
+		<span class="complementar_institute">Instituição</span>
+	</div>
+</section>
+
+<section class="template professional_experience display_none">
+	<div class="formation">
+		<input class="office ident_separate" placeholder="Setor" />
+		<input class="office_date in bar_separate text_align_center" type="number" placeholder="Entrada" />
+		<input class="office_date out text_align_center ident_separate" type="number" placeholder="Saída" />
+		<input class="office_institute" placeholder="Empresa" />
+		<span class="change up one cursor_pointer">↑</span>
+		<span class="change down one cursor_pointer">↓</span>
+		<span class="remove tre cursor_pointer">-</span>
+		<textarea class="about_work" placeholder="Suas colaborações, desenvolvimentos e contribuições na empresa"></textarea>
+	</div>
+</section>
+
+<section class="template professional_experience print display_none">
+	<div class="formation">
+		<span class="office ident_separate">Setor</span>
+		<span class="office_date in bar_separate">Entrada</span>
+		<span class="office_date out ident_separate">Saída</span>
+		<span class="office_institute">Empresa</span>
+		<span class="about_work">Suas colaborações, desenvolvimentos e contribuições na empresa</span>
+	</div>
+</section>
+<!-- Área de templates -->
+
+<script src="https://flourigh.github.io/plugins/jquery/min/jquery-3.2.1.min.js"></script>
 <script>
-    $("section.midlebottom > div.list div.iten svg.instagram").click(function() {
-        window.open("https://flourigh.com/instagram", "_blank"); });
+	$(document).on("keyup change blur", "input.candidate_name", function() {
+		if ($(this).val() != "") {
+			$("span.candidate_name").html($(this).val()); } });
+	$(document).on("keyup change blur", "select.civil_state", function() {
+		if ($(this).val() != "") {
+			$("span.civil_state").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.birt_date", function() {
+		if ($(this).val() != "") {
+			$("span.birt_date").html($(this).val()); } });
+	$(document).on("keyup change blur", "select.genre", function() {
+		if ($(this).val() != "") {
+			$("span.genre").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.tel_cel", function() {
+		if ($(this).val() != "__ _________") {
+			$("span.tel_cel").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.tel_rec", function() {
+		if ($(this).val() != "__ _________") {
+			$("span.tel_rec").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.email", function() {
+		if ($(this).val() != "") {
+			$("span.email").html($(this).val()); } });
 
-    $("section.midlebottom > div.list div.iten svg.facebook").click(function() {
-        window.open("https://flourigh.com/facebook", "_blank"); });
 
-    $("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
-        window.open("https://flourigh.com/whatsapp", "_blank"); });
 
-    $("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
-        $("section.midlebottom").toggleClass("hidden"); });
+	$(document).on("keyup change blur", "input.place", function() {
+		if ($(this).val() != "") {
+			$("span.endereco span.place").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.house", function() {
+		if ($(this).val() != "") {
+			$("span.endereco span.house").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.subneigh", function() {
+		if ($(this).val() != "") {
+			$("span.endereco span.subneigh").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.neigh", function() {
+		if ($(this).val() != "") {
+			$("span.endereco span.neigh").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.country", function() {
+		if ($(this).val() != "") {
+			$("span.endereco span.country").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.city", function() {
+		if ($(this).val() != "__") {
+			$("span.endereco span.city").html($(this).val()); } });
+	$(document).on("keyup change blur", "input.cep", function() {
+		if ($(this).val() != "_____-___") {
+			$("span.endereco span.cep").html($(this).val()); } });
 
-    $("section.banner img.logotipo, section.container div.close").click(function() {
-	$("section.container").toggleClass("hidden"); });
+	$(document).on("keyup change", "input[type='number']", function(e) {
+		$(this).attr("min", "0");
+		var code = e.keyCode || e.which;
+		if(code == 109 || code == 189) {
+			var valor = $(this).val();
+			$(this).val(valor.replace(/[-]/g, "")) } });
+
+
+	var count_element_clone_one = 0;
+	function new_element_clone_one() {
+		count_element_clone_one++;
+		var clone_one = document.querySelector("section.template.academic_formation div.formation").cloneNode(true);
+		$(clone_one).addClass("X" + count_element_clone_one);
+		$(clone_one).appendTo("section.duo div.academic_formation div.formations");
+
+		var clone_one_duo = document.querySelector("section.template.academic_formation.print div.formation").cloneNode(true);
+		$(clone_one_duo).addClass("X" + count_element_clone_one);
+		$(clone_one_duo).appendTo("section.one div.academic_formation div.formations");	}
+
+	$(document).on("click", "span.add.one", new_element_clone_one);
+	$(document).on("click", "span.remove.one", function() {
+		var className = $(this).parents("div").attr("class");
+		className = className.replace("formation X", "");
+		$("section.one div.academic_formation div.formations div.X"+className).remove();
+		$(this).parents("div.X"+className).remove(); });
+
+// change arrows 25/08/2017 bug nos sections 2 e 3
+	$(document).on("click", "span.change.up.one", function() {
+		var className = $(this).parents("div").attr("class");
+		className = className.replace("formation X", "");
+		$(this).parents("div.X"+className).remove().insertBefore($("section.duo div.academic_formation div.formations div:first-child")); });
+
+	$(document).on("click", "span.change.down.one", function() {
+		var className = $(this).parents("div").attr("class");
+		className = className.replace("formation X", "");
+		$(this).parents("div.X"+className).remove().insertAfter($("section.duo div.academic_formation div.formations div:last")); });
+// change arrows 25/08/2017 bug nos sections 2 e 3
+
+	$(document).ready(new_element_clone_one);
+
+	$(document).on("keyup change", "div.formation select.academic_course", function() {
+		$(".academic_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.academic_course.type").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.academic_course", function() {
+		$(".academic_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.academic_course.period").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.formation_date", function() {
+		$(".academic_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.formation_date").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.academic_institute", function() {
+		$(".academic_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.academic_institute").html($(this).val()); });
+
+
+
+	var count_element_clone_duo = 0;
+	function new_element_clone_duo() {
+		count_element_clone_duo++;
+
+		var clone_duo = document.querySelector("section.template.complementar_formation div.formation").cloneNode(true);
+		$(clone_duo).addClass("X" + count_element_clone_duo);
+		$(clone_duo).appendTo("section.duo div.complementar_formation div.formations");
+
+		var clone_duo_duo = document.querySelector("section.template.complementar_formation.print div.formation").cloneNode(true);
+		$(clone_duo_duo).addClass("X" + count_element_clone_duo);
+		$(clone_duo_duo).appendTo("section.one div.complementar_formation div.formations");	}
+	
+	$(document).on("click", "span.add.duo", new_element_clone_duo);
+	$(document).on("click", "span.remove.duo", function() {
+		var className = $(this).parents("div").attr("class");
+		className = className.replace("formation X", "");
+		$("section.one div.complementar_formation div.formations div.X"+className).remove();
+		$(this).parents("div.X"+className).remove(); });
+	$(document).ready(new_element_clone_duo);
+
+	$(document).on("keyup change", "div.formation input.complementar_course", function() {
+		$(".complementar_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.complementar_course").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.course_date", function() {
+		$(".complementar_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.course_date").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.complementar_institute", function() {
+		$(".complementar_formation div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.complementar_institute").html($(this).val()); });
+
+
+	var count_element_clone_tre = 0;
+	function new_element_clone_tre() {
+		count_element_clone_tre++;
+		var clone_tre = document.querySelector("section.template.professional_experience div.formation").cloneNode(true);
+		$(clone_tre).addClass("X" + count_element_clone_tre);
+		$(clone_tre).appendTo("section.duo div.professional_experience div.formations");
+
+		var clone_tre_duo = document.querySelector("section.template.professional_experience.print div.formation").cloneNode(true);
+		$(clone_tre_duo).addClass("X" + count_element_clone_tre);
+		$(clone_tre_duo).appendTo("section.one div.professional_experience div.formations"); }
+
+	$(document).on("click", "span.add.tre", new_element_clone_tre);
+	$(document).on("click", "span.remove.tre", function() {
+		var className = $(this).parents("div").attr("class");
+		className = className.replace("formation X", "");
+		$("section.one div.professional_experience div.formations div.X"+className).remove();
+		$(this).parents("div.X"+className).remove(); });
+	$(document).ready(new_element_clone_tre);
+
+	$(document).on("keyup change", "div.formation input.office", function() {
+		$(".professional_experience div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.office").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.office_date.in", function() {
+		$(".professional_experience div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.office_date.in").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.office_date.out", function() {
+		$(".professional_experience div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.office_date.out").html($(this).val()); });
+	$(document).on("keyup change", "div.formation input.office_institute", function() {
+		$(".professional_experience div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.office_institute").html($(this).val()); });
+	$(document).on("keyup change", "div.formation textarea.about_work", function() {
+		$(".professional_experience div.formation."+$(this).parent().attr("class").split(" ")[1]+" span.about_work").html($(this).val()); });
+
+
+	$(document).on("keyup change blur", "textarea.skills_knowledge", function() {
+		var skills_knowledge = $(this).val();
+		var skills_knowledge = skills_knowledge.replace(/\r\n|\r|\n/g, "<br/>");
+		$("span.skills_knowledge").html(skills_knowledge); });
+
+	$(document).on("keyup change blur", "textarea.more_informations", function() {
+		var more_informations = $(this).val();
+		var more_informations = more_informations.replace(/\r\n|\r|\n/g, "<br/>");
+		$("span.more_informations").html(more_informations); });
+
+	$(document).on("keyup change blur", "textarea.professional_goal", function() {
+		var professional_goal = $(this).val();
+		var professional_goal = professional_goal.replace(/\r\n|\r|\n/g, "<br/>");
+		$("span.professional_goal").html(professional_goal); });
+
+	$(document).on("keyup", "textarea", function() {
+		$(this).css("height", "auto");
+		$(this).height(this.scrollHeight); });
+
+
+	$(document).on("click", "div.preview", function() {
+		$("section.one, section.duo").toggleClass("display_none");	});
+
+	$(document).on("click", "div.print", function() {
+		window.print(); });
+
+	$(window).on("load", function() {
+		$("<span> &mdash; </span>").insertAfter(".ident_separate");
+		$("<span>, </span>").insertAfter(".comma_separate");
+		$("<span> / </span>").insertAfter(".bar_separate"); });
+
+	$.getScript("https://flourigh.github.io/plugins/jquery/maskedinput.js", function() {
+		$("section.duo div.relevant_information div.line_duo input.tel_cel, section.duo div.relevant_information div.line_duo input.tel_rec").mask("99 99999999?9");
+		$("section.duo div.relevant_information div.line_tre input.city").mask("aa");
+		$("section.duo div.relevant_information div.line_tre input.cep").mask("99999-999"); });
 </script>
 
-<script>
-	(function() {
-		var d = document, s = d.createElement('script');
-		s.src = 'https://flourigh.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s); })();
-
-	(function(win) {
-		var doc = win.document;
-		if(!win.navigator.standalone && !location.hash && win.addEventListener) {
-			win.scrollTo(0, 1);
-			var scrollTop = 1,
-			getScrollTop = function() {
-				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0; },
-				bodycheck = setInterval(function() {
-					if(doc.body ) {
-						clearInterval(bodycheck);
-						scrollTop = getScrollTop();
-						win.scrollTo(0, scrollTop === 1 ? 0 : 1); } }, 15);
-				win.addEventListener("load", function() {
-					setTimeout(function() {
-						if(getScrollTop() < 20) {
-						win.scrollTo(0, scrollTop === 1 ? 0 : 1); } }, 0); }, false); } })(this);
-
-	(function(win, doc, sdk_url) {
-		if(win.snaptr) return;
-		var tr=win.snaptr=function() {
-			tr.handleRequest ? tr.handleRequest.apply(tr, arguments):tr.queue.push(arguments); };
-	tr.queue = [];
-	var s='script';
-	var new_script_section=doc.createElement(s);
-	new_script_section.async=!0;
-	new_script_section.src=sdk_url;
-	var insert_pos=doc.getElementsByTagName(s)[0];
-	insert_pos.parentNode.insertBefore(new_script_section, insert_pos); })
-	(window, document, 'https://sc-static.net/scevent.min.js');
-	snaptr('init','8018e6e9-e534-443f-a225-7f221f41b27b',{ 'user_email':'<USER-EMAIL>' })
-	snaptr('track','PAGE_VIEW')
-</script>
+<meta author="R♥T" />
