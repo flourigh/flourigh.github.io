@@ -1,6 +1,3 @@
-# Teste Vertex: Front-End
-Desenvolver uma aplicação HTML5
-
 ## Instruções
 Clone este repositrio em seu projeto para utilizar em seu aplicativo
 
