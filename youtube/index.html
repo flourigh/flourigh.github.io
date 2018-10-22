@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<meta charset="utf-8" />
-<title>Video Search</title>
-<meta name="description" content="Aplicativo de testes para a Vertex" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<link rel="canonical" href="https://flourigh.com" />
-<link rel="icon" href="https://flourigh.github.io/favicon.ico" />
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+<!-- AngularJS -->
+	<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<!-- AngularJS -->
 
 <!-- Materia design lite -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -13,189 +10,46 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <!-- material design lite -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<div ng-app="Text_Strings" ng-controller="Text_Lists">
 
-<style>
-	* { outline: none; }
-
-	.cursor_pointer { cursor: pointer; }
-	.visibility_hidden { visibility: hidden; }
-	.display_none { display: none; }
-	.transition_all { transition: all 1.5s ease; }
-
-	form.mdl-form-principal-search {
-		margin: auto;
-		width: 350px;
-		position: relative;
-		transform: translateY(25vh) !important;
-	}
-
-	.mdl-navigation__link:hover {
-		cursor: pointer;
-	}
-
-	.mdl-form-principal-search.top {
-		transform: translateY(40px) !important;
-		transform-style: preserve-3d;
-		will-change: transform;
-		transition-duration: .2s;
-		transition-timing-function: cubic-bezier(.4,0,.2,1);
-		transition-property: transform;
-	}
-	.search-r {
-		width: 350px;
-		margin: auto;
-		margin-top: 40px;
-	}
-	.search-l {
-		margin: auto;
-		width: 350px;
-		position: relative;
-		transform: translateY(40vh) !important;
-	}
-	.mdl-textfield {
-		width: 306px !important;
-	}
-	.mdl-card {
-		margin-bottom: 20px !important;
-		width: 350px !important;
-		min-height: 50px !important;
-	}
-	.mdl-card__media {
-		background-color: #ffffff;
-	}
-	.keyboard_arrow_left, .keyboard_arrow_right {
-		position: fixed;
-		z-index: 999;
-		bottom: 20px;
-	}
-	.keyboard_arrow_left {
-		float: left;
-		left: 50px;
-	}
-	.keyboard_arrow_right {
-		float: right;
-		right: 50px;
-	}
-	.full_modal {
-		width: 100vw;
-		height: 100vh;
-		background: #333333;
-	}
-	.full_modal .video {
-		border-radius: 2px;
-		width: 80vw;
-		min-width: 420px;
-		height: 80vh;
-		min-height: 350px;
-		padding: 0;
-		display: flex;
-		margin: auto;
-		top: 10vh;
-		position: relative;
-		box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
-	}
-	.full_modal .video .mdl-card-video {
-		margin-bottom: 0px !important;
-		width: 80vw !important;
-		height: 80vh !important;
-	}
-	.full_modal .video iframe {
-		width: 80vw;
-		height: calc(80vh - 36px);
-	}
-	ul.counters_modal {
-		margin: 6px 40px 6px 0px;
-		text-align: center;
-	}
-	ul.counters_modal li.counters {
-		list-style: none;
-		display: inline;
-		margin: 0px 30px 0px 30px;
-	}
-	.thumb_alt {
-		position: relative;
-		top: 5px;
-		color: rgba(0,0,0,.5);
-	}
-	.thumb_alt.thumb_down_alt {
-		top: 10px;
-	}
-	.video x {
-		position: fixed;
-    z-index: 999;
-    display: block;
-    height: 48px;
-    width: 48px;
-    border: 0;
-    flex-shrink: 0;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    font-size: 26px;
-    line-height: 56px;
-    margin: 8px 12px;
-    top: 0;
-    right: 0;
-    color: rgb(255,255,255);
-	}
-</style>
-
-<div class="mdl-layout mdl-js-layout" ng-app="Text_Strings" ng-controller="Text_Lists">
-
-	<div class="mdl-layout__drawer">
-		<span class="mdl-layout-title">{{appTitle}}</span>
-		<nav class="mdl-navigation">
-			<a class="mdl-navigation__link">{{aboutApp}}</a>
-		</nav>
-	</div>
-
-	<main class="mdl-layout__content">
-		<div class="page-content">
-
-			<form class="mdl-form-principal-search search-f" autocomplete="off">
+			<form class="search-f" autocomplete="off">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				  <input class="mdl-textfield__input search-q" type="text" autofocus value="{{searchQuery}}"/>
+				  <input class="mdl-textfield__input search-q" autofocus value="{{searchQuery}}"/>
 				  <label class="mdl-textfield__label">{{searchImput}}</label>
 				</div>
 
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+				<button class="mdl-button mdl-js-button mdl-button--colored">
 					<i class="material-icons">search</i>
 				</button>
 			</form>
 
-			<div class="video_embed full_modal display_none">
+			<div class="search-e">
 				<div class="video">
 					
 				</div>
 			</div>
 
-			<div class="search-l display_none">
-				<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+			<div class="search-l">
+				<div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
 			</div>
-			<div class="search-r display_none"></div>
 
-			<button class="keyboard_arrow_left cursor_pointer display_none mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+			<div class="search-r"></div>
+
+			<button class="keyboard_arrow_left mdl-button mdl-js-button mdl-button--colored">
 				<i class="material-icons">keyboard_arrow_left</i>
 			</button>
-			<button class="keyboard_arrow_right cursor_pointer display_none mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+			<button class="keyboard_arrow_right mdl-button mdl-js-button mdl-button--colored">
 				<i class="material-icons">keyboard_arrow_right</i>
 			</button>
-
-		</div>
-	</main>
 
 </div>
 
 <script>
 
-    angular.module('Text_Strings',[]).controller('Text_Lists', function($scope) {
+    angular.module('Text_Strings', []).controller('Text_Lists', function($scope) {
 
-		$scope.searchImput='Pesquisar'
-		$scope.appTitle='Video Search'
-		$scope.aboutApp='Sobre'
-		$scope.searchQuery=getVar("search")		
+		$scope.searchImput = 'Pesquisar'
+		$scope.searchQuery = getWindowLocation("history") ? getWindowLocation("history") : getWindowLocation("search")
 
     })
 
@@ -203,33 +57,66 @@
 		qcss: function(css) {
 			return $(this).queue(function(next) {
 				$(this).css(css)
-		next() }) }	})
+				next()
+			})
+		}
+	})
+
+	function getWindowLocation(a) {
+		//console.log(a)
+
+		function urlDecode(a, b) {
+			if(!a || !a.length) {
+				return {} }
+
+			var r = {}, c = a.split('&'), d, e, f, g = /\+/g;
+
+			for(var i = 0, l = c.length; i < l; i++) {
+				d = c[i].split('=')
+				e = unescape(d[0])
+				f = unescape(d[1]).replace(g, ' ')
+				if(b !== true) {
+					if(typeof r[e] == 'undefined') {
+						r[e] = f
+					} else if(typeof r[e] == 'string') {
+						r[e] = [r[e]]
+						r[e].push(f)
+					} else {
+						r[e].push(f) }
+				} else {
+					r[e] = f } }
+			return r
+		}
+
+		return(urlDecode(window.location.href.substring(window.location.href.indexOf("?")+1))[a])
+	}
 
 	var key = "AIzaSyBTOfZRh_vFnNr9NPJiVOLxJQ5Krj7oK8g";
 	var part = "id,snippet";
 	var maxResults = 7;
 	var playlistId, nextPageToken, prevPageToken;
 
+	getWindowLocation("videoid") ? console.log('videoid 1') : console.log('videoid 0')
+	getWindowLocation("search") ? changeSearchState() : console.log('search 0')
+	getWindowLocation("history") ? changeSearchState() : console.log('history 0')
+
 	$(document).on("click", "x", function() {
-		history.pushState(getVar("search"), getVar("search"), "index.html?searchHistory=" + getVar("search"));
-		$(".search-q").attr('value', getVar("search") );
+		history.pushState(getWindowLocation("search"), getWindowLocation("search"), "?history=" + getWindowLocation("search"));
+		$(".search-q").attr('value', getWindowLocation("search") );
 		changeSearchState()
 	})
 
-	changeSearchState()
-
 	function changeSearchState() {
-		$('form.search-f').qcss({
-			display: getVar("videoid") ? 'none' : 'block'
+		$('.search-f').qcss({
+			display: getWindowLocation("videoid") ? 'none' : 'block'
 		})
-		$('.video_embed').qcss({
-			display: getVar("videoid") ? 'block' : 'none'
+		$('.search-e').qcss({
+			display: getWindowLocation("videoid") ? 'block' : 'none'
 		})
 
-		if(getVar("searchHistory") !== undefined) {
+		if(getWindowLocation("history") !== undefined) {
 			displayLoader()
-			$(".mdl-form-principal-search").addClass("top")
-			requestVideoPlaylist(getVar("searchHistory"), playlistId)
+			requestVideoPlaylist(getWindowLocation("history"), playlistId)
 		}
 
 	}
@@ -352,33 +239,7 @@
 			) }
 			$(".search-r").html("") }
 
-	function urlDecode(string, overwrite) {
-		if(!string || !string.length) {
-			return {} }
-
-		var obj = {}, pairs = string.split('&'), pair, name, value, lsRegExp = /\+/g;
-
-		for(var i = 0, len = pairs.length; i < len; i++) {
-			pair = pairs[i].split('=')
-			name = unescape(pair[0])
-			value = unescape(pair[1]).replace(lsRegExp, ' ')
-			if(overwrite !== true) {
-				if(typeof obj[name] == 'undefined') {
-					obj[name] = value
-				} else if(typeof obj[name] == 'string') {
-					obj[name] = [obj[name]]
-					obj[name].push(value)
-				} else {
-					obj[name].push(value) }
-			} else {
-				obj[name] = value } }
-		return obj }
-
-	function getVar(param) {
-		var wl = window.location.href, params = urlDecode(wl.substring(wl.indexOf("?")+1))
-		return(params[param]) }
-
-	getVar("videoid") ? requestVideoId(getVar("videoid"), getVar("search")) : false
+	getWindowLocation("videoid") ? requestVideoId(getWindowLocation("videoid"), getWindowLocation("search")) : false
 
 	function requestVideoId(videoId, search) {
 		var options = {
@@ -406,7 +267,7 @@
 				'<div class="mdl-card__media" style="background-image: url(http://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
 
 					'<iframe id="ytplayer"' + 
-					'src="http://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getVar("search") + '"' + 
+					'src="http://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getWindowLocation("search") + '"' + 
 					'frameborder="0"/>' + 
 
 				'</div>' + 
