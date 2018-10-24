@@ -10,7 +10,148 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <!-- material design lite -->
 
+<<<<<<< HEAD
 <div ng-app="Text_Strings" ng-controller="Text_Lists">
+=======
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+
+<style>
+	* { outline: none; }
+
+	.cursor_pointer { cursor: pointer; }
+	.visibility_hidden { visibility: hidden; }
+	.display_none { display: none; }
+	.transition_all { transition: all 1.5s ease; }
+
+	form.mdl-form-principal-search {
+		margin: auto;
+		width: 350px;
+		position: relative;
+		transform: translateY(25vh) !important;
+	}
+
+	.mdl-navigation__link:hover {
+		cursor: pointer;
+	}
+
+	.mdl-form-principal-search.top {
+		transform: translateY(40px) !important;
+		transform-style: preserve-3d;
+		will-change: transform;
+		transition-duration: .2s;
+		transition-timing-function: cubic-bezier(.4,0,.2,1);
+		transition-property: transform;
+	}
+	.search-r {
+		width: 350px;
+		margin: auto;
+		margin-top: 40px;
+	}
+	.search-l {
+		margin: auto;
+		width: 350px;
+		position: relative;
+		transform: translateY(40vh) !important;
+	}
+	.mdl-textfield {
+		width: 306px !important;
+	}
+	.mdl-card {
+		margin-bottom: 20px !important;
+		width: 350px !important;
+		min-height: 50px !important;
+	}
+	.mdl-card__media {
+		background-color: #ffffff;
+	}
+	.keyboard_arrow_left, .keyboard_arrow_right {
+		position: fixed;
+		z-index: 999;
+		bottom: 20px;
+	}
+	.keyboard_arrow_left {
+		float: left;
+		left: 50px;
+	}
+	.keyboard_arrow_right {
+		float: right;
+		right: 50px;
+	}
+	.full_modal {
+		width: 100vw;
+		height: 100vh;
+		background: #333333;
+	}
+	.full_modal .video {
+		border-radius: 2px;
+		width: 80vw;
+		min-width: 420px;
+		height: 80vh;
+		min-height: 350px;
+		padding: 0;
+		display: flex;
+		margin: auto;
+		top: 10vh;
+		position: relative;
+		box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	}
+	.full_modal .video .mdl-card-video {
+		margin-bottom: 0px !important;
+		width: 80vw !important;
+		min-width: 420px;
+		height: 80vh !important;
+	}
+	.full_modal .video iframe {
+		width: 100%;
+		height: calc(80vh - 36px);
+	}
+	ul.counters_modal {
+		margin: 6px 40px 6px 0px;
+		text-align: center;
+	}
+	ul.counters_modal li.counters {
+		list-style: none;
+		display: inline;
+		margin: 0px 30px 0px 30px;
+	}
+	.thumb_alt {
+		position: relative;
+		top: 5px;
+		color: rgba(0,0,0,.5);
+	}
+	.thumb_alt.thumb_down_alt {
+		top: 10px;
+	}
+	.video x {
+		position: fixed;
+    z-index: 999;
+    display: block;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    margin: 8px 12px;
+    top: 0;
+    right: 0;
+    color: rgb(255,255,255);
+	}
+</style>
+
+<div class="mdl-layout mdl-js-layout" ng-app="Text_Strings" ng-controller="Text_Lists">
+
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">{{appTitle}}</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link">{{aboutApp}}</a>
+		</nav>
+	</div>
+>>>>>>> b2664d5a42fd66150139af84b028d099a9bb5a5f
 
 			<form class="search-f" autocomplete="off">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -264,10 +405,14 @@
 
 			'<div class="mdl-card mdl-card-video mdl-shadow--2dp">' + 
 
-				'<div class="mdl-card__media" style="background-image: url(http://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
+				'<div class="mdl-card__media" style="background-image: url(https://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
 
 					'<iframe id="ytplayer"' + 
+<<<<<<< HEAD
 					'src="http://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getWindowLocation("search") + '"' + 
+=======
+					'src="https://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getVar("search") + '"' + 
+>>>>>>> b2664d5a42fd66150139af84b028d099a9bb5a5f
 					'frameborder="0"/>' + 
 
 				'</div>' + 
