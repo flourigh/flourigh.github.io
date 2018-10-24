@@ -99,10 +99,11 @@
 	.full_modal .video .mdl-card-video {
 		margin-bottom: 0px !important;
 		width: 80vw !important;
+		min-width: 420px;
 		height: 80vh !important;
 	}
 	.full_modal .video iframe {
-		width: 80vw;
+		width: 100%;
 		height: calc(80vh - 36px);
 	}
 	ul.counters_modal {
@@ -403,10 +404,10 @@
 
 			'<div class="mdl-card mdl-card-video mdl-shadow--2dp">' + 
 
-				'<div class="mdl-card__media" style="background-image: url(http://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
+				'<div class="mdl-card__media" style="background-image: url(https://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
 
 					'<iframe id="ytplayer"' + 
-					'src="http://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getVar("search") + '"' + 
+					'src="https://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getVar("search") + '"' + 
 					'frameborder="0"/>' + 
 
 				'</div>' + 
