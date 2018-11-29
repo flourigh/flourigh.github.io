@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <title>Roberto Monteiro</title>
 <meta charset="utf-8" />
@@ -97,7 +96,7 @@
 
 	/* Routers */
 	function getWindowLocation () {
-		return (window.location.pathname.substring(window.location.pathname.indexOf("/") + 1)) }
+		return (window.location.search.substring(window.location.search.indexOf("?") + 1)) }
 
 	if (getWindowLocation() === "facebook") {
 		location.assign("https://facebook.com/flourighcom") }
