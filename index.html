@@ -96,7 +96,8 @@
 
 	/* Routers */
 	function getWindowLocation () {
-		return (window.location.search.substring(window.location.search.indexOf("?") + 1)) }
+		return (window.location.search.substring(window.location.search.indexOf("?") + 1).toLowerCase())
+		console.log(window.location.search.substring(window.location.search.indexOf("?") + 1)) }
 
 	if (getWindowLocation() === "facebook") {
 		location.assign("https://facebook.com/flourighcom") }
