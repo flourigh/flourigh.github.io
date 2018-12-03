@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <title>Roberto Monteiro</title>
+
 <meta charset="utf-8" />
-<link rel="icon" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+<meta name="theme-color" content="#333333" />
+<link rel="manifest" href="https://flourigh.github.io/manifest.json" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="apple-touch-startup-image" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+
+<link rel="icon" sizes="192x192" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+<link rel="icon" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
 
 <meta name="keywords" content="Criar site, Desenvolver Aplicativo, Consultoria, Informática, Ajuda" />
 <meta name="description" content="Desenvolvedor Web com diploma na instituição Estácio de Sá com conhecimento em linguagem BackEnd, FrontEnd e design limpo e agradável. Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo. Buscar o novo é um rumo que deve ser tomado." />
@@ -76,6 +83,10 @@
 	<div id="disqus_thread"></div>
 </section>
 
+<script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
+<script src="https://flourigh.github.io/scripts/getWindowLocationSearch.js"></script>
+<script src="https://flourigh.github.io/scripts/disqus.js"></script>
+
 <script>
 	/* Buttons */
 	$("section.midlebottom > div.list div.iten svg.instagram").click(function() {
@@ -93,59 +104,6 @@
 	$("section.banner img.logotipo, section.container div.close").click(function() {
 		$("section.container").toggleClass("hidden"); });
 	/* Buttons */
-
-	/* Routers */
-	function getWindowLocation () {
-		return (window.location.search.substring(window.location.search.indexOf("?") + 1).toLowerCase())
-		console.log(window.location.search.substring(window.location.search.indexOf("?") + 1)) }
-
-	if (getWindowLocation() === "facebook") {
-		location.assign("https://facebook.com/flourighcom") }
-
-	if (getWindowLocation() === "instagram") {
-		location.assign("https://instagram.com/flourigh") }
-
-	if (getWindowLocation() === "twitter") {
-		location.assign("https://twitter.com/flourigh") }
-
-	if (getWindowLocation() === "linkedin") {
-		location.assign("https://linkedin.com/in/flourigh") }
-
-	if (getWindowLocation() === "youtube") {
-		location.assign("https://youtube.com/flourigh") }
-
-	if (getWindowLocation() === "google") {
-		location.assign("https://goo.gl/maps/4ZaDjctKe7S2") }
-
-	if (getWindowLocation() === "plus") {
-		location.assign("https://google.com/+robertomonteiro") }
-
-	if (getWindowLocation() === "whatsapp") {
-		location.assign("https://wa.me/5521986762331") }
-
-	if (getWindowLocation() === "about") {
-		location.assign("https://about.me/flourigh") }
-
-	if (getWindowLocation() === "curriculo") {
-		location.assign("https://flourigh.github.io/curriculo") }
-
-	if (getWindowLocation() === "qrcode") {
-		location.assign("https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=") }
-
-	if (getWindowLocation() === "booking") {
-		location.assign("https://calendar.google.com/calendar?cid=dDNwcWsxbWRuZWEybTZ2aWszZjZzMHZodTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ") }
-
-	if (getWindowLocation() === "stackoverflow") {
-		location.assign("https://pt.stackoverflow.com/users/8939") }
-	/* Routers */
-
-	/* Disqus */
-	(function() {
-		var d = document, s = d.createElement("script");
-		s.src = "https://flourigh.disqus.com/embed.js";
-		s.setAttribute("data-timestamp", +new Date());
-		(d.head || d.body).appendChild(s); })();
-	/* Disqus */
 </script>
 
 <!-- Google smartlock -->
