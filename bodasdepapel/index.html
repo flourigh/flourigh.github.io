@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title itemprop="name">Bodas de Papel</title>
+<meta name="referrer" content="origin" />
+<link rel="icon" href="favicon.ico" />
+<meta itemprop="description" content="Bodas de Papel" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Bodas de Papel" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="keywords" content="Bodas de Papel, Casamento, Amor eterno, Roberto e Thaina, Roberto, Thaina" />
+<meta name="theme-color" content="#FECBFE" />
+<meta name="application-name" content="Bodas de Papel" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
+<section class="loading">
+	<img class="heartone heartmoves" src="heartone.png" />
+	<img class="hearttwo heartmoves" src="hearttwo.png" />
+	<img class="hearttre heartmoves" src="hearttre.png" />
+	<img class="heartfor heartmoves" src="heartfor.png" />
+	<img class="heartfiv heartmoves" src="heartfiv.png" />
+	<img class="heartsix heartmoves" src="heartsix.png" />
+	<img class="heartsev heartmoves" src="heartsev.png" />
+	<img class="hearthei heartmoves" src="hearthei.png" />
+	<img src="animation mask.jpg" />
+	<div class="banner_shadow_mask"></div>
+</section>
+
+<style>
+	*{padding: 0; margin: 0; text-decoration: none; outline: none; border: none;}
+
+	body{background: #FECBFE; overflow-x: hidden; animation: loadbody 3s; animation-delay: 3s;}
+	section img{width: 100vw;}
+	section div.banner_shadow_mask{z-index: 1;background: #c91439; width: 100vw; height: 1px; position: relative; float: right; top: -5px; box-shadow: 0px 3px 33px 8px #c61b35;}
+	section.loading{opacity: 0;}
+	@keyframes loadbody { from {opacity: 0;} to {opacity: 1;} }
+
+	img.heartmoves{opacity: 0; position: absolute; width: 3vw; height: 3vw; animation-timing-function: ease-in; transform-style: preserve-3d;}
+	img.heartone{top: 16vw; right: 13vw; animation: heartmoves 8s, heartmovestopone 8s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.hearttwo{top: 23vw; right: 8vw; animation: heartmoves 5s, heartmovestoptwo 5s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.hearttre{top: 28vw; right: 16vw; animation: heartmoves 7s, heartmovestoptre 7s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.heartfor{top: 29vw; right: 19vw; animation: heartmoves 3s, heartmovestopfor 3s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.heartfiv{top: 24vw; right: 26vw; animation: heartmoves 6s, heartmovestopfiv 6s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.heartsix{top: 21vw; right: 26vw; animation: heartmoves 9s, heartmovestopsix 9s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.heartsev{top: 30vw; right: 14vw; animation: heartmoves 2s, heartmovestopsev 2s; animation-iteration-count: infinite; animation-delay: 3s;}
+	img.hearthei{top: 31vw; right: 18vw; animation: heartmoves 4s, heartmovestophei 4s; animation-iteration-count: infinite; animation-delay: 3s;}
+	@keyframes heartmoves { 0% {opacity: 0.1;} 1% {opacity: 0.2;} 2% {opacity: 0.3;} 3% {opacity: 1;} 95% {opacity: 1;} 100% {opacity: 0.7;} to {right: 120vw; transform: rotateY(180deg); opacity: 0.3;} }
+	@keyframes heartmovestopone { 6% {top: 16vw;} 82% {top: 28vw;} 100% {top: 14vw;} to {top: 16vw;} }
+	@keyframes heartmovestoptwo { 3% {top: 23vw;} 31% {top: 13vw;} 100% {top: 21vw;} to {top: 23vw;} }
+	@keyframes heartmovestoptre { 8% {top: 28vw;} 41% {top: 14vw;} 98% {top: 26vw;} to {top: 28vw;} }
+	@keyframes heartmovestopfor { 9% {top: 29vw;} 51% {top: 15vw;} 100% {top: 27vw;} to {top: 29vw;} }
+	@keyframes heartmovestopfiv { 4% {top: 24vw;} 61% {top: 16vw;} 100% {top: 22vw;} to {top: 24vw;} }
+	@keyframes heartmovestopsix { 1% {top: 21vw;} 51% {top: 15vw;} 100% {top: 19vw;} to {top: 21vw;} }
+	@keyframes heartmovestopsev { 0% {top: 30vw;} 61% {top: 16vw;} 100% {top: 28vw;} to {top: 30vw;} }
+	@keyframes heartmovestophei { 1% {top: 31vw;} 71% {top: 17vw;} 100% {top: 29vw;} to {top: 31vw;} }
+
+	div.streetview{position: relative; top: -5px; text-align: center; min-height: 95px;}
+	div.streetview a{color: #e1639d; font-size: 1em; font-family: segoe ui, arial; position: relative; top: 30px;}
+</style>
+
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.slim.min.js"></script>
+<script>
+	(window.jQuery || document.write('<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"><\/script>'));
+	(window.jQuery || document.write('<script src="jquery-3.1.0.slim.min.js"><\/script>'));
+    setTimeout(function() {
+		$("section").removeClass("loading"); }, 3000);
+</script>
+
+<meta copy="Roberto Monteiro" />

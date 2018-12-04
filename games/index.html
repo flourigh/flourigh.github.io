@@ -1,0 +1,40 @@
+<title>SeniorsGames</title>
+
+<style>
+	* {padding: 0; margin: 0; border: none; outline: none; transition: all 1s; text-decoration: none;}
+	body {background: #101010; width: 100vw; height: 100vh; overflow: hidden; position: absolute;}
+
+	.container {width: 75vw; margin: auto;}
+	a {float: left;}
+	img {width: calc(50vw - 171px); height: 35vh; border-radius: 3px;}
+</style>
+
+<div class="container">
+	<a href="dot.html"><img src="dot.png"/></a>
+	<a href="drop.html"><img src="drop.png"/></a>
+	<a href="key.html"><img src="key.png"/></a>
+	<a href="blink.html"><img src="blink.png"/></a>
+</div>
+
+<script src='1.7.2_jquery.min.js'></script>
+<script>
+	$(document).on('keydown', function(e) {
+		event.preventDefault();
+		if(e.keyCode === 27) {
+			window.sessionStorage.clear();
+			window.localStorage.clear();
+		}
+		if(e.keyCode === 49 || e.keyCode === 97) {
+			window.location.replace("dot.html");
+		}
+		if(e.keyCode === 50 || e.keyCode === 98) {
+			window.location.replace("drop.html");
+		}
+		if(e.keyCode === 51 || e.keyCode === 99) {
+			window.location.replace("key.html");
+		}
+		if(e.keyCode === 52 || e.keyCode === 100) {
+			window.location.replace("blink.html");
+		}
+	});
+</script>

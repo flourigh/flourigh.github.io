@@ -1,0 +1,306 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- AngularJS -->
+	<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<!-- AngularJS -->
+
+<!-- Materia design lite -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css" />
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<!-- material design lite -->
+
+<div ng-app="Text_Strings" ng-controller="Text_Lists">
+
+			<form class="search-f" autocomplete="off">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				  <input class="mdl-textfield__input search-q" autofocus value="{{searchQuery}}"/>
+				  <label class="mdl-textfield__label">{{searchImput}}</label>
+				</div>
+
+				<button class="mdl-button mdl-js-button mdl-button--colored">
+					<i class="material-icons">search</i>
+				</button>
+			</form>
+
+
+			<div class="search-l">
+				<div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+			</div>
+
+			<div class="search-n"></div>
+			<div class="search-e"></div>
+			<div class="search-r"></div>
+
+</div>
+
+<script>
+
+    angular.module('Text_Strings', []).controller('Text_Lists', function($scope) {
+
+		$scope.searchImput = 'Pesquisar'
+		$scope.searchQuery = getWindowLocation("history") ? getWindowLocation("history") : getWindowLocation("search")
+
+    })
+
+	$.fn.extend({
+		qcss: function(css) {
+			return $(this).queue(function(next) {
+				$(this).css(css)
+				next()
+			})
+		}
+	})
+
+	function getWindowLocation(a) {
+		//console.log(a)
+
+		function urlDecode(a, b) {
+			if(!a || !a.length) {
+				return {} }
+
+			var r = {}, c = a.split('&'), d, e, f, g = /\+/g;
+
+			for(var i = 0, l = c.length; i < l; i++) {
+				d = c[i].split('=')
+				e = unescape(d[0])
+				f = unescape(d[1]).replace(g, ' ')
+				if(b !== true) {
+					if(typeof r[e] == 'undefined') {
+						r[e] = f
+					} else if(typeof r[e] == 'string') {
+						r[e] = [r[e]]
+						r[e].push(f)
+					} else {
+						r[e].push(f) }
+				} else {
+					r[e] = f } }
+			return r
+		}
+
+		return(urlDecode(window.location.href.substring(window.location.href.indexOf("?")+1))[a])
+	}
+
+	var key = "AIzaSyBTOfZRh_vFnNr9NPJiVOLxJQ5Krj7oK8g";
+	var maxResults = 7;
+	var playlistId, nextPageToken, prevPageToken;
+	var embedVideo = "https://www.youtube.com/embed/";
+	var youtubeApi = "https://www.googleapis.com/youtube/v3/";
+
+	getWindowLocation("videoid") ? console.log('videoid 1') : console.log('videoid 0')
+	getWindowLocation("search") ? changeSearchState() : console.log('search 0')
+	getWindowLocation("history") ? changeSearchState() : console.log('history 0')
+
+	$(document).on("click", "x", function() {
+		history.pushState(getWindowLocation("search"), getWindowLocation("search"), "?history=" + getWindowLocation("search"));
+		$(".search-q").attr('value', getWindowLocation("search") );
+		changeSearchState()
+	})
+
+	function changeSearchState() {
+		$('.search-f').qcss({
+			display: getWindowLocation("videoid") ? 'none' : 'block'
+		})
+		$('.search-e').qcss({
+			display: getWindowLocation("videoid") ? 'block' : 'none'
+		})
+
+		if(getWindowLocation("history") !== undefined) {
+			displayLoader()
+			requestVideoPlaylist(getWindowLocation("history"), playlistId)
+		}
+
+	}
+
+	function searchQueryFunction(searchReturn) {
+		return function() {
+			return $(".search-q").val().trim() } }
+
+	function displayLoader() {
+		$('.search-l, .search-r').css('display', 'none')
+		$(document).ready(function() {
+			$(".search-l").delay(10).fadeIn()
+			$(".search-r").delay("slow").fadeIn()
+			$(".search-l").delay(10).fadeOut()
+		})
+	}
+
+	$(".search-f").submit(function(event) {
+		displayLoader()
+		searchQuery = searchQueryFunction()
+		if(searchQuery().length === 0) {
+			event.preventDefault()
+		} else {
+			event.preventDefault()
+			$(".mdl-form-principal-search").addClass("top")
+			requestVideoPlaylist(searchQuery(), playlistId) } })
+
+	$(document).on("click", ".keyboard_arrow_left", function previousPage() {
+		displayLoader()
+		searchQuery = searchQueryFunction()
+		requestVideoPlaylist(searchQuery(), playlistId, prevPageToken); })
+
+	$(document).on("click", ".keyboard_arrow_right", function nextPage() {
+		displayLoader()
+		searchQuery = searchQueryFunction()
+		requestVideoPlaylist(searchQuery(), playlistId, nextPageToken) })
+
+	getWindowLocation("videoid") ? requestVideoId(getWindowLocation("videoid"), getWindowLocation("search")) : false
+
+	/* Busca o termo pesquisado */
+	function requestVideoPlaylist(search, playlistId, pageToken) {
+		var options = {
+			part: "id,snippet",
+			maxResults: maxResults,
+			playlistId: playlistId,
+			q: search,
+			key: key }
+
+		if (pageToken !== null) {
+			options.pageToken = pageToken; }
+
+	    $.get(youtubeApi + "search", options, function(data) {
+			$.each(data.items, function(index, items) {
+				displayResult(items) })
+				tokenPagination(data)
+				displayResultsCount(data)
+		})
+
+	    function tokenPagination(data) {
+
+			if (data.pageInfo.totalResults !== 0) {
+
+				prevPageToken = data.prevPageToken, nextPageToken = data.nextPageToken;
+
+				$('.keyboard_arrow_left').delay("fast").qcss({
+					display: prevPageToken ? 'block' : 'none'
+				})
+				$('.keyboard_arrow_right').delay("fast").qcss({
+					display: nextPageToken ? 'block' : 'none'
+				})
+
+			}
+		}
+
+		function displayResult(videoSnippet) {
+			var title = videoSnippet.snippet.title;
+			var description = videoSnippet.snippet.description;
+			var publishedAt = videoSnippet.snippet.publishedAt;
+			var videoId = videoSnippet.id.videoId;
+			if (videoId === undefined) {
+				videoId = videoSnippet.id.channelId; }
+			var thumbnails = videoSnippet.snippet.thumbnails.medium.url;
+
+			$('.search-r').append(
+
+				'<img class="video_thumbnails" src="' + thumbnails + '" />' + 
+				'<a class="video_id" href="?videoid='+ videoId +'&search=' + search + '">' + 
+					title +
+				'</a>' + 
+				'<spam class="video_description">' + 
+					description + 
+				'</spam>'
+			)
+		}
+		clearSearch({
+			Search_r: true
+		})
+		arrowPaginations()
+	}
+	/* Busca o termo pesquisado */
+
+	/* Cria um modal com o embed e estatisticas do vídeo */
+	function requestVideoId(videoId, search) {
+		var options = {
+			part: 'snippet,statistics',
+			id: videoId,
+			key: key }
+	    $.get(youtubeApi + "videos", options, function(data) {
+			$.each(data.items, function(index, items) {
+				displayResult(items)
+			})
+		})
+		function displayResult(videoSnippet) {
+			$('.search-e').append(
+				'<iframe src="' + embedVideo + videoSnippet.id + '?&origin=' + getWindowLocation("search") + '" />' + 
+				'<spam class="video_viewCount">' + 
+					videoSnippet.statistics.viewCount + 
+				'</spam>' + 
+				'<spam class="video_likeCount">' + 
+					videoSnippet.statistics.likeCount + 
+				'</spam>' + 
+				'<spam class="video_dislikeCount">' + 
+					videoSnippet.statistics.dislikeCount + 
+				'</spam>'
+			).prepend(
+				'<x>X</x>'
+			)
+		}
+	}
+	/* Cria um modal com o embed e estatisticas do vídeo */
+
+	/* Mensagem e quantidade de resultados */
+	function displayResultsCount(data) {
+		if (data.pageInfo.totalResults === 0) {
+			var messageResult = "Nada encontrado";
+
+			clearSearch({
+				displayArrowNavigation: false
+			})
+
+//			displayArrowNavigation(false)
+
+		} else if (data.pageInfo.totalResults === 1) {
+			var messageResult = "1 Resultado";
+		} else {
+			var messageResult = data.pageInfo.totalResults + " Resultados";
+
+			clearSearch({
+				displayArrowNavigation: true
+			})
+
+//			displayArrowNavigation(true)
+
+		}
+		clearSearch({
+			messageResult: messageResult
+		})
+	}
+	/* Mensagem e quantidade de resultados */
+
+	/* insere os botões de paginação*/
+	function arrowPaginations() {
+		$(".search-n").html("").prepend(
+			'<button class="keyboard_arrow_left mdl-button mdl-js-button mdl-button--colored">' + 
+				'<i class="material-icons">keyboard_arrow_left</i>' + 
+			'</button>' + 
+			'<button class="keyboard_arrow_right mdl-button mdl-js-button mdl-button--colored">' + 
+				'<i class="material-icons">keyboard_arrow_right</i>' + 
+			'</button>'
+		)
+	}
+	/* insere os botões de paginação*/
+
+	/* limpa e exibe tela */
+	function clearSearch(clear) {
+		if(clear.Search_r) {
+			$(".search-r").html("")
+		}
+		if(clear.messageResult) {
+			$('.search-r').prepend(clear.messageResult)
+		}
+		console.log(clear.displayArrowNavigation)
+		$('.search-n').delay("fast").qcss({
+			display: clear.displayArrowNavigation ? 'block' : 'none'
+		})
+	}
+	/* limpa e exibe tela */
+
+	/* Toggle do botão de navegação */
+	function displayArrowNavigation(show) {
+		$('.search-n').delay("fast").qcss({
+			display: show ? 'block' : 'none'
+		})
+	}
+	/* Toggle do botão de navegação */
+</script>
