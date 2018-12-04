@@ -3,11 +3,9 @@
 function getWindowLocation () {
     return (window.location.pathname.substring(window.location.pathname.indexOf('/') + 1)).toLowerCase() }
 
-$(document).ready(function() {
-    $.getScript("routers.js", function () {
-       console.log("Script loaded but not necessarily executed.")
-    })
-})
+var imported = document.createElement('script')
+imported.src = 'routers.js'
+document.head.appendChild(imported)
 
 console.log(getWindowLocation())
 /* Routers */
