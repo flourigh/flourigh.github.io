@@ -87,17 +87,19 @@
 <script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
 <script src="https://flourigh.github.io/scripts/getWindowLocationSearch.js"></script>
 <script src="https://flourigh.github.io/scripts/disqus.js"></script>
+<script src="https://smartlock.google.com/client"></script>
+<script src="https://flourigh.github.io/scripts/googleSmartLock.js"></script>
 
 <script>
 	/* Buttons */
 	$("section.midlebottom > div.list div.iten svg.instagram").click(function() {
-		window.open("https://www.instagram.com/flourigh", "_blank"); });
+		location.assign('https://instagram.com/flourigh') });
 
 	$("section.midlebottom > div.list div.iten svg.twitter").click(function() {
-		window.open("https://twitter.com/flourigh", "_blank"); });
+		location.assign('https://twitter.com/flourigh') });
 
 	$("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
-		window.open("https://api.whatsapp.com/send?phone=5521986762331", "_blank"); });
+		location.assign('https://wa.me/5521986762331') });
 
 	$("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
 		$("section.midlebottom").toggleClass("hidden"); });
@@ -106,18 +108,3 @@
 		$("section.container").toggleClass("hidden"); });
 	/* Buttons */
 </script>
-
-<!-- Google smartlock -->
-<script src="https://smartlock.google.com/client"></script>
-<script>
-  const hintPromise = googleyolo.hint({
-    supportedAuthMethods: ["https://accounts.google.com"],
-    supportedIdTokenProviders: [{uri: "https://accounts.google.com", clientId: "981138028764-lg0q4k4100dlh7r80cc40o28o6c21oon.apps.googleusercontent.com"}]})
-  hintPromise.then((credential) => {
-  if (credential.id) {
-    console.log(credential.id)
-    console.log(credential.displayName)
-    console.log(credential.profilePicture)
-  }})
-</script>
-<!-- Google smartlock -->
