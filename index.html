@@ -1,9 +1,17 @@
+
 <!DOCTYPE html>
 <title>Roberto Monteiro</title>
+
 <meta charset="utf-8" />
-<link rel="icon" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+<meta name="theme-color" content="#333333" />
+<link rel="manifest" href="https://flourigh.github.io/manifest.json" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="apple-touch-startup-image" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+
+<link rel="icon" sizes="192x192" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
+<link rel="icon" href="https://avatars0.githubusercontent.com/u/722723?s=400&u=344c04981803810bdce5509a000af45fa61c0acd&v=4" />
 
 <meta name="keywords" content="Criar site, Desenvolver Aplicativo, Consultoria, Informática, Ajuda" />
 <meta name="description" content="Desenvolvedor Web com diploma na instituição Estácio de Sá com conhecimento em linguagem BackEnd, FrontEnd e design limpo e agradável. Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo. Buscar o novo é um rumo que deve ser tomado." />
@@ -76,79 +84,29 @@
 	<div id="disqus_thread"></div>
 </section>
 
+<script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
+<script src="https://flourigh.github.io/scripts/disqus.js"></script>
+<script src="https://smartlock.google.com/client"></script>
+<script src="https://flourigh.github.io/scripts/googleSmartLock.js"></script>
+<script src="https://flourigh.github.io/scripts/getWindowLocationPathname.js"></script>
+<script src="https://flourigh.github.io/scripts/getWindowLocationSearch.js"></script>
+<script src="https://flourigh.github.io/scripts/routers.js"></script>
+
 <script>
 	/* Buttons */
-    $("section.midlebottom > div.list div.iten svg.instagram").click(function() {
-        window.open("https://www.instagram.com/flourigh", "_blank"); });
+	$("section.midlebottom > div.list div.iten svg.instagram").click(function() {
+		location.assign('https://instagram.com/flourigh') });
 
-    $("section.midlebottom > div.list div.iten svg.twitter").click(function() {
-        window.open("https://twitter.com/flourigh", "_blank"); });
+	$("section.midlebottom > div.list div.iten svg.twitter").click(function() {
+		location.assign('https://twitter.com/flourigh') });
 
-    $("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
-        window.open("https://api.whatsapp.com/send?phone=5521986762331", "_blank"); });
+	$("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
+		location.assign('https://wa.me/5521986762331') });
 
-    $("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
-        $("section.midlebottom").toggleClass("hidden"); });
+	$("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
+		$("section.midlebottom").toggleClass("hidden"); });
 
-    $("section.banner img.logotipo, section.container div.close").click(function() {
-	$("section.container").toggleClass("hidden"); });
+	$("section.banner img.logotipo, section.container div.close").click(function() {
+		$("section.container").toggleClass("hidden"); });
 	/* Buttons */
-
-	/* Routers
-	function getWindowLocation() {
-		return(window.location.href.substring(window.location.href.indexOf("?")+2)) }
-
-	if (getWindowLocation() === "facebook") {
-		window.open("https://facebook.com/flourighcom", "_self") }
-
-	if (getWindowLocation() === "instagram") {
-		window.open("https://instagram.com/flourigh", "_self") }
-
-	if (getWindowLocation() === "twitter") {
-		window.open("https://twitter.com/flourigh", "_self") }
-
-	if (getWindowLocation() === "linkedin") {
-		window.open("https://linkedin.com/in/flourigh", "_self") }
-
-	if (getWindowLocation() === "youtube") {
-		window.open("https://youtube.com/flourigh", "_self") }
-
-	if (getWindowLocation() === "google") {
-		window.open("https://goo.gl/maps/4ZaDjctKe7S2", "_self") }
-
-	if (getWindowLocation() === "plus") {
-		window.open("https://google.com/+robertomonteiro", "_self") }
-
-	if (getWindowLocation() === "whatsapp") {
-		window.open("https://wa.me/5521986762331", "_self") }
-
-	if (getWindowLocation() === "about") {
-		window.open("https://about.me/flourigh", "_self") }
-
-	if (getWindowLocation() === "curriculo") {
-		window.open("https://flourigh.github.io/curriculo", "_self") }
-
-	if (getWindowLocation() === "qrcode") {
-        window.open("https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=", "_self") }
-
-	if (getWindowLocation() === "booking") {
-		window.open("https://calendar.google.com/calendar?cid=dDNwcWsxbWRuZWEybTZ2aWszZjZzMHZodTBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ", "_self") }
-
-	if (getWindowLocation() === "cloudflareworker") {
-		window.open("https://cloudflareworkers.com/#d6cfced1cd8bd1260c41342c8b62e704", "_self") }
-
-	if (getWindowLocation() === "l2r") {
-		window.open("http://forum.netmarble.com/lin2ws_pt/profile/29479928", "_self") }
-
-	if (getWindowLocation() === "stackoverflow") {
-		window.open("https://pt.stackoverflow.com/users/8939", "_self") }
-	Routers */
-
-	/* Disqus */
-	(function() {
-		var d = document, s = d.createElement('script');
-		s.src = 'https://flourigh.disqus.com/embed.js';
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s); })();
-	/* Disqus */
 </script>
