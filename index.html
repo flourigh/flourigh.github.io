@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <title>Roberto Monteiro</title>
 
@@ -17,43 +16,44 @@
 <meta name="description" content="Desenvolvedor Web com diploma na instituição Estácio de Sá com conhecimento em linguagem BackEnd, FrontEnd e design limpo e agradável. Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo. Buscar o novo é um rumo que deve ser tomado." />
 
 <style>
-    * { padding: 0; margin: 0; text-decoration: none; outline: none; border: none; resize: none; }
-    body { background: #f5f5f5; overflow: hidden; }
+    * { padding: 0; margin: 0; text-decoration: none; outline: none; border: none; resize: none }
+    body { background: #f5f5f5; overflow: hidden }
 
-    .transition_height { transition: height 1s; }
-    .transition_background { transition: background 1s; }
-    .transition_top { transition: top 1s; }
-    .cursor_pointer { cursor: pointer; }
+    .transition_height { transition: height 1s }
+    .transition_background { transition: background 1s }
+    .transition_top { transition: top 1s }
+    .cursor_pointer { cursor: pointer }
 
-    section.banner { width: 100vw; height: 100vh; position: relative; top: 0; left: 0; }
-    section.banner > div.mask { width: 90vw; max-width: 900px; min-width: 320px; margin: auto; position: relative; top: 25%; text-align: center; }
-    section.banner img.logotipo { box-shadow: 0px 0px 17px -3px #111111; border-radius: 50%; width: 15vw; min-width: 64px; max-width: 165px; position: relative; background: #f5f5f5; margin: auto; display: block; top: -70px; padding: 15px; }
-    section.banner span.logotipo { text-shadow: 0px 0px 7px #111111; color: #f5f5f5; font-size: 10vw; font-family: segoe ui; position: relative; top: -55px; font-weight: 100; }
+    section.banner { width: 100vw; height: 100vh; position: relative; top: 0; left: 0; display: none }
+    section.banner > div.mask { width: 90vw; max-width: 900px; min-width: 320px; margin: auto; position: relative; top: 25%; text-align: center }
+    section.banner img.logotipo { box-shadow: 0px 0px 17px -3px #111111; border-radius: 50%; width: 15vw; min-width: 64px; max-width: 165px; position: relative; background: #f5f5f5; margin: auto; display: block; top: -70px; padding: 15px }
+    section.banner span.logotipo { text-shadow: 0px 0px 7px #111111; color: #f5f5f5; font-size: 10vw; font-family: segoe ui; position: relative; top: -55px; font-weight: 100 }
 
     @media screen and (min-width: 1060px) {
-		section.banner span.logotipo { font-size: 120px; } }
+		section.banner span.logotipo { font-size: 120px } }
 
-    section.midlebottom { width: 100vw; height: calc(100vh - 90vh); position: absolute; top: 90vh; background: #101010; }
-    section.midlebottom.hidden { background: rgba(255, 255, 255, 0); }
-    section.midlebottom > div.list { position: relative; width: 90vw; max-width: 900px; height: 10vh; margin: auto; }
-    section.midlebottom > div.list div.iten { overflow: hidden; background: #f5f5f5; width: 30%; height: 7vh; position: absolute; bottom: 0px; border-radius: 15px 15px 0px 0px; box-shadow: 0px 0px 17px -3px #111111; }
-    section.midlebottom > div.list div.iten.second { left: calc(50% - 15%); }
-    section.midlebottom > div.list div.iten.third { right: 0px; }
-    section.midlebottom > div.list div.iten:hover { height: 40vh; }
+    section.midlebottom { width: 100vw; height: calc(100vh - 90vh); position: absolute; top: 90vh; background: #101010 }
+    section.midlebottom.hidden { background: rgba(255, 255, 255, 0) }
+    section.midlebottom > div.list { position: relative; width: 90vw; max-width: 900px; height: 10vh; margin: auto }
+    section.midlebottom > div.list div.iten { overflow: hidden; background: #f5f5f5; width: 30%; height: 7vh; position: absolute; bottom: 0px; border-radius: 15px 15px 0px 0px; box-shadow: 0px 0px 17px -3px #111111 }
+    section.midlebottom > div.list div.iten.second { left: calc(50% - 15%) }
+    section.midlebottom > div.list div.iten.third { right: 0px }
+    section.midlebottom > div.list div.iten:hover { height: 40vh }
 
-    section.container { position: absolute; width: calc(90vw - 20px); height: calc(95vh - 20px); left: 5vw; background: #2a2e2e; border-radius: 15px 15px 0px 0px; top: 5vh; padding: 10px; overflow-y: auto; }
-    section.container.hidden { top: 100vh; }
-    section.container div.close { position: absolute; right: 10px; top: 10px; font-family: segoe ui; font-size: 2em; color: #101010; background: #efecec; border-radius: 15px; padding: 5px 15px; }
+    section.container { position: absolute; width: calc(90vw - 20px); height: calc(95vh - 20px); left: 5vw; background: #2a2e2e; border-radius: 15px 15px 0px 0px; top: 5vh; padding: 10px; overflow-y: auto }
+    section.container.hidden { top: 100vh }
+    section.container div.close { position: absolute; right: 10px; top: 10px; font-family: segoe ui; font-size: 2em; color: #101010; background: #efecec; border-radius: 15px; padding: 5px 15px }
 
     @-webkit-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
     @-moz-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
     @-o-keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
     @keyframes background_animation_element { 0% { background-position: 30% 0% } 50% { background-position: 70% 100% } 100% { background-position: 30% 0% } }
-    .background_animation_element { background: linear-gradient(130deg, #2ecc71, #e67e22, #f1c40f, #34495e, #9b59b6, #e74c3c, #3498db, #1abc9c, #e74c3c, #e67e22, #9b59b6, #f1c40f, #2ecc71, #1abc9c, #3498db, #34495e); background-size: 10000vw 10000vh;
+    .background_animation_element { background: linear-gradient(130deg, #2ecc71, #e67e22, #f1c40f, #34495e, #9b59b6, #e74c3c, #3498db, #1abc9c, #e74c3c, #e67e22, #9b59b6, #f1c40f, #2ecc71, #1abc9c, #3498db, #34495e);
+        background-size: 10000vw 10000vh;
         -webkit-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
         -moz-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
         -o-animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;
-        animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite;}
+        animation: background_animation_element 60s cubic-bezier(0.43, 0.16, 0, 0.26) infinite }
 </style>
 
 <section class="banner background_animation_element">
@@ -86,27 +86,26 @@
 
 <script src="https://flourigh.github.io/scripts/jquery-3.2.1.slim.min.js"></script>
 <script src="https://flourigh.github.io/scripts/disqus.js"></script>
-<script src="https://smartlock.google.com/client"></script>
-<script src="https://flourigh.github.io/scripts/googleSmartLock.js"></script>
-<script src="https://flourigh.github.io/scripts/getWindowLocationPathname.js"></script>
-<script src="https://flourigh.github.io/scripts/getWindowLocationSearch.js"></script>
+<script src="https://flourigh.github.io/scripts/getWindowLocation.js"></script>
 <script src="https://flourigh.github.io/scripts/routers.js"></script>
+<!--script src="https://smartlock.google.com/client"></script-->
+<!--script src="https://flourigh.github.io/scripts/googleSmartLock.js"></script-->
 
 <script>
 	/* Buttons */
 	$("section.midlebottom > div.list div.iten svg.instagram").click(function() {
-		location.assign('https://instagram.com/flourigh') });
+		location.assign('https://instagram.com/flourigh') })
 
 	$("section.midlebottom > div.list div.iten svg.twitter").click(function() {
-		location.assign('https://twitter.com/flourigh') });
+		location.assign('https://twitter.com/flourigh') })
 
 	$("section.midlebottom > div.list div.iten svg.whatsapp").click(function() {
-		location.assign('https://wa.me/5521986762331') });
+		location.assign('https://wa.me/5521986762331') })
 
 	$("section.midlebottom > div.list div.iten").hover(function(handlerIn, handlerOut) {
-		$("section.midlebottom").toggleClass("hidden"); });
+		$("section.midlebottom").toggleClass("hidden") })
 
 	$("section.banner img.logotipo, section.container div.close").click(function() {
-		$("section.container").toggleClass("hidden"); });
+		$("section.container").toggleClass("hidden") })
 	/* Buttons */
 </script>
