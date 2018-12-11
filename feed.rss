@@ -1,0 +1,45 @@
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Roberto Monteiro</title>
+    <link>https://flourigh.github.io/</link>
+    <description>
+      Buscar o novo é um rumo que deve ser tomado.
+    </description>
+    <language>pt-br</language>
+    <lastBuildDate>2018-04-21T12:05:29Z</lastBuildDate>
+    <item>
+      <title>Buscar o novo é um rumo que deve ser tomado.</title>
+      <link>https://flourigh.github.io/</link>
+      <guid>2fd4e1c67a2d28fced849ee1bb76e7391b93eb12</guid>
+      <pubDate>2018-04-21T012:07:14Z</pubDate>
+      <author>Roberto Monteiro</author>
+      <description>Buscar o novo é um rumo que deve ser tomado.</description>
+      <content:encoded>
+        
+        <!doctype html>
+        <html lang="en" prefix="op: http://media.facebook.com/op#">
+          <head>
+            <meta charset="utf-8">
+            <link rel="canonical" href="https://flourigh.github.io/">
+            <meta property="op:markup_version" content="v1.0">
+          </head>
+          <body>
+            <article>
+              <header>
+
+              </header>
+
+Desenvolvedor Web com diploma na instituição Estácio de Sá focado em linguagem BackEnd e admirado por um FrontEnd com design limpo e agradável.
+Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo.
+
+              <footer>
+
+              </footer>
+            </article>
+          </body>
+        </html>
+        
+      </content:encoded>
+    </item>
+  </channel>
+</rss>

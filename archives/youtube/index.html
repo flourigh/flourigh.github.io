@@ -1,8 +1,11 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<!-- AngularJS -->
-	<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
-<!-- AngularJS -->
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<title>Video Search</title>
+<meta name="description" content="Aplicativo de testes para a Vertex" />
+<!--base href="https://flourigh.com" /-->
+<link rel="canonical" href="https://flourigh.com" />
+<link rel="icon" href="https://flourigh.github.io/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
 
 <!-- Materia design lite -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
@@ -10,36 +13,190 @@
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <!-- material design lite -->
 
-<div ng-app="Text_Strings" ng-controller="Text_Lists">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
 
-			<form class="search-f" autocomplete="off">
+<style>
+	* { outline: none; }
+
+	.cursor_pointer { cursor: pointer; }
+	.visibility_hidden { visibility: hidden; }
+	.display_none { display: none; }
+	.transition_all { transition: all 1.5s ease; }
+
+	form.mdl-form-principal-search {
+		margin: auto;
+		width: 350px;
+		position: relative;
+		transform: translateY(25vh) !important;
+	}
+
+	.mdl-navigation__link:hover {
+		cursor: pointer;
+	}
+
+	.mdl-form-principal-search.top {
+		transform: translateY(40px) !important;
+		transform-style: preserve-3d;
+		will-change: transform;
+		transition-duration: .2s;
+		transition-timing-function: cubic-bezier(.4,0,.2,1);
+		transition-property: transform;
+	}
+	.search-r {
+		width: 350px;
+		margin: auto;
+		margin-top: 40px;
+	}
+	.search-l {
+		margin: auto;
+		width: 350px;
+		position: relative;
+		transform: translateY(40vh) !important;
+	}
+	.mdl-textfield {
+		width: 306px !important;
+	}
+	.mdl-card {
+		margin-bottom: 20px !important;
+		width: 350px !important;
+		min-height: 50px !important;
+	}
+	.mdl-card__media {
+		background-color: #ffffff;
+	}
+	.keyboard_arrow_left, .keyboard_arrow_right {
+		position: fixed;
+		z-index: 999;
+		bottom: 20px;
+	}
+	.keyboard_arrow_left {
+		float: left;
+		left: 50px;
+	}
+	.keyboard_arrow_right {
+		float: right;
+		right: 50px;
+	}
+	.full_modal {
+		width: 100vw;
+		height: 100vh;
+		background: #333333;
+	}
+	.full_modal .video {
+		border-radius: 2px;
+		width: 80vw;
+		min-width: 420px;
+		height: 80vh;
+		min-height: 350px;
+		padding: 0;
+		display: flex;
+		margin: auto;
+		top: 10vh;
+		position: relative;
+		box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4);
+	}
+	.full_modal .video .mdl-card-video {
+		margin-bottom: 0px !important;
+		width: 80vw !important;
+		min-width: 420px;
+		height: 80vh !important;
+	}
+	.full_modal .video iframe {
+		width: 100%;
+		height: calc(80vh - 36px);
+	}
+	ul.counters_modal {
+		margin: 6px 40px 6px 0px;
+		text-align: center;
+	}
+	ul.counters_modal li.counters {
+		list-style: none;
+		display: inline;
+		margin: 0px 30px 0px 30px;
+	}
+	.thumb_alt {
+		position: relative;
+		top: 5px;
+		color: rgba(0,0,0,.5);
+	}
+	.thumb_alt.thumb_down_alt {
+		top: 10px;
+	}
+	.video x {
+		position: fixed;
+    z-index: 999;
+    display: block;
+    height: 48px;
+    width: 48px;
+    border: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 56px;
+    margin: 8px 12px;
+    top: 0;
+    right: 0;
+    color: rgb(255,255,255);
+	}
+</style>
+
+<div class="mdl-layout mdl-js-layout" ng-app="Text_Strings" ng-controller="Text_Lists">
+
+	<div class="mdl-layout__drawer">
+		<span class="mdl-layout-title">{{appTitle}}</span>
+		<nav class="mdl-navigation">
+			<a class="mdl-navigation__link">{{aboutApp}}</a>
+		</nav>
+	</div>
+
+	<main class="mdl-layout__content">
+		<div class="page-content">
+
+			<form class="mdl-form-principal-search search-f" autocomplete="off">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				  <input class="mdl-textfield__input search-q" autofocus value="{{searchQuery}}"/>
+				  <input class="mdl-textfield__input search-q" type="text" autofocus value="{{searchQuery}}"/>
 				  <label class="mdl-textfield__label">{{searchImput}}</label>
 				</div>
 
-				<button class="mdl-button mdl-js-button mdl-button--colored">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
 					<i class="material-icons">search</i>
 				</button>
 			</form>
 
-
-			<div class="search-l">
-				<div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+			<div class="video_embed full_modal display_none">
+				<div class="video">
+					
+				</div>
 			</div>
 
-			<div class="search-n"></div>
-			<div class="search-e"></div>
-			<div class="search-r"></div>
+			<div class="search-l display_none">
+				<div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+			</div>
+			<div class="search-r display_none"></div>
+
+			<button class="keyboard_arrow_left cursor_pointer display_none mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+				<i class="material-icons">keyboard_arrow_left</i>
+			</button>
+			<button class="keyboard_arrow_right cursor_pointer display_none mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
+				<i class="material-icons">keyboard_arrow_right</i>
+			</button>
+
+		</div>
+	</main>
 
 </div>
 
 <script>
 
-    angular.module('Text_Strings', []).controller('Text_Lists', function($scope) {
+    angular.module('Text_Strings',[]).controller('Text_Lists', function($scope) {
 
-		$scope.searchImput = 'Pesquisar'
-		$scope.searchQuery = getWindowLocation("history") ? getWindowLocation("history") : getWindowLocation("search")
+		$scope.searchImput='Pesquisar'
+		$scope.appTitle='Video Search'
+		$scope.aboutApp='Sobre'
+		$scope.searchQuery=getVar("search")		
 
     })
 
@@ -47,67 +204,33 @@
 		qcss: function(css) {
 			return $(this).queue(function(next) {
 				$(this).css(css)
-				next()
-			})
-		}
-	})
-
-	function getWindowLocation(a) {
-		//console.log(a)
-
-		function urlDecode(a, b) {
-			if(!a || !a.length) {
-				return {} }
-
-			var r = {}, c = a.split('&'), d, e, f, g = /\+/g;
-
-			for(var i = 0, l = c.length; i < l; i++) {
-				d = c[i].split('=')
-				e = unescape(d[0])
-				f = unescape(d[1]).replace(g, ' ')
-				if(b !== true) {
-					if(typeof r[e] == 'undefined') {
-						r[e] = f
-					} else if(typeof r[e] == 'string') {
-						r[e] = [r[e]]
-						r[e].push(f)
-					} else {
-						r[e].push(f) }
-				} else {
-					r[e] = f } }
-			return r
-		}
-
-		return(urlDecode(window.location.href.substring(window.location.href.indexOf("?")+1))[a])
-	}
+		next() }) }	})
 
 	var key = "AIzaSyBTOfZRh_vFnNr9NPJiVOLxJQ5Krj7oK8g";
+	var part = "id,snippet";
 	var maxResults = 7;
 	var playlistId, nextPageToken, prevPageToken;
-	var embedVideo = "https://www.youtube.com/embed/";
-	var youtubeApi = "https://www.googleapis.com/youtube/v3/";
-
-	getWindowLocation("videoid") ? console.log('videoid 1') : console.log('videoid 0')
-	getWindowLocation("search") ? changeSearchState() : console.log('search 0')
-	getWindowLocation("history") ? changeSearchState() : console.log('history 0')
 
 	$(document).on("click", "x", function() {
-		history.pushState(getWindowLocation("search"), getWindowLocation("search"), "?history=" + getWindowLocation("search"));
-		$(".search-q").attr('value', getWindowLocation("search") );
+		history.pushState(getVar("search"), getVar("search"), "index.html?searchHistory=" + getVar("search"));
+		$(".search-q").attr('value', getVar("search") );
 		changeSearchState()
 	})
 
+	changeSearchState()
+
 	function changeSearchState() {
-		$('.search-f').qcss({
-			display: getWindowLocation("videoid") ? 'none' : 'block'
+		$('form.search-f').qcss({
+			display: getVar("videoid") ? 'none' : 'block'
 		})
-		$('.search-e').qcss({
-			display: getWindowLocation("videoid") ? 'block' : 'none'
+		$('.video_embed').qcss({
+			display: getVar("videoid") ? 'block' : 'none'
 		})
 
-		if(getWindowLocation("history") !== undefined) {
+		if(getVar("searchHistory") !== undefined) {
 			displayLoader()
-			requestVideoPlaylist(getWindowLocation("history"), playlistId)
+			$(".mdl-form-principal-search").addClass("top")
+			requestVideoPlaylist(getVar("searchHistory"), playlistId)
 		}
 
 	}
@@ -135,46 +258,62 @@
 			$(".mdl-form-principal-search").addClass("top")
 			requestVideoPlaylist(searchQuery(), playlistId) } })
 
-	$(document).on("click", ".keyboard_arrow_left", function previousPage() {
+	$(".keyboard_arrow_left").click(function previousPage() {
 		displayLoader()
 		searchQuery = searchQueryFunction()
 		requestVideoPlaylist(searchQuery(), playlistId, prevPageToken); })
 
-	$(document).on("click", ".keyboard_arrow_right", function nextPage() {
+	$(".keyboard_arrow_right").click(function nextPage() {
 		displayLoader()
 		searchQuery = searchQueryFunction()
 		requestVideoPlaylist(searchQuery(), playlistId, nextPageToken) })
 
-	getWindowLocation("videoid") ? requestVideoId(getWindowLocation("videoid"), getWindowLocation("search")) : false
-
-	/* Busca o termo pesquisado */
 	function requestVideoPlaylist(search, playlistId, pageToken) {
 		var options = {
-			part: "id,snippet",
+			part: part,
 			maxResults: maxResults,
 			playlistId: playlistId,
 			q: search,
 			key: key }
 
-		if (pageToken !== null) {
-			options.pageToken = pageToken; }
+			if (pageToken !== null) {
+				options.pageToken = pageToken; }
 
-	    $.get(youtubeApi + "search", options, function(data) {
+	    $.get("https://www.googleapis.com/youtube/v3/search", options, function(data) {
+
 			$.each(data.items, function(index, items) {
 				displayResult(items) })
 				tokenPagination(data)
-				displayResultsCount(data)
+
 		})
 
 	    function tokenPagination(data) {
 
+			if (data.pageInfo.totalResults === 0) {
+				var messageResult = "Nada encontrado";
+				$('.keyboard_arrow_left, .keyboard_arrow_right').css('display', 'none')
+			} else if (data.pageInfo.totalResults === 1) {
+				var messageResult = "1 Resultado";
+			} else {
+				var messageResult = data.pageInfo.totalResults + " Resultados";
+			}
+
+			$('.search-r').prepend(
+				'<div class="mdl-card">' + 
+					'<div class="mdl-card__supporting-text mdl-card--border">' + 
+						messageResult + 
+					'</div>' + 
+				'</div>'
+			)
+
 			if (data.pageInfo.totalResults !== 0) {
 
-				prevPageToken = data.prevPageToken, nextPageToken = data.nextPageToken;
-
+				prevPageToken = data.prevPageToken;
 				$('.keyboard_arrow_left').delay("fast").qcss({
 					display: prevPageToken ? 'block' : 'none'
 				})
+
+				nextPageToken = data.nextPageToken;
 				$('.keyboard_arrow_right').delay("fast").qcss({
 					display: nextPageToken ? 'block' : 'none'
 				})
@@ -186,121 +325,114 @@
 			var title = videoSnippet.snippet.title;
 			var description = videoSnippet.snippet.description;
 			var publishedAt = videoSnippet.snippet.publishedAt;
+
 			var videoId = videoSnippet.id.videoId;
 			if (videoId === undefined) {
 				videoId = videoSnippet.id.channelId; }
-			var thumbnails = videoSnippet.snippet.thumbnails.medium.url;
 
+			var thumbnails = videoSnippet.snippet.thumbnails.medium.url;
 			$('.search-r').append(
 
-				'<img class="video_thumbnails" src="' + thumbnails + '" />' + 
-				'<a class="video_id" href="?videoid='+ videoId +'&search=' + search + '">' + 
-					title +
-				'</a>' + 
-				'<spam class="video_description">' + 
-					description + 
-				'</spam>'
-			)
-		}
-		clearSearch({
-			Search_r: true
-		})
-		arrowPaginations()
-	}
-	/* Busca o termo pesquisado */
+'<div class="mdl-card mdl-shadow--2dp">' + 
 
-	/* Cria um modal com o embed e estatisticas do vídeo */
+	'<div class="mdl-card__media" style="background-image: url('+ thumbnails +'); min-height: 260px;">' + 
+	'</div>' + 
+
+	'<div class="mdl-card__title">' + 
+		'<h6>' + title + '</h6>' + 
+	'</div>' + 
+	'<div class="mdl-card__supporting-text mdl-card--border">' + 
+		'<h7>' + description + '</h7>' + 
+	'</div>' + 
+
+	'<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect video_url" href="?videoid='+ videoId +'&search=' + search + '">' + 
+		'<i class="material-icons">link</i>' + 
+	'</a>' + 
+'</div>'
+
+			) }
+			$(".search-r").html("") }
+
+	function urlDecode(string, overwrite) {
+		if(!string || !string.length) {
+			return {} }
+
+		var obj = {}, pairs = string.split('&'), pair, name, value, lsRegExp = /\+/g;
+
+		for(var i = 0, len = pairs.length; i < len; i++) {
+			pair = pairs[i].split('=')
+			name = unescape(pair[0])
+			value = unescape(pair[1]).replace(lsRegExp, ' ')
+			if(overwrite !== true) {
+				if(typeof obj[name] == 'undefined') {
+					obj[name] = value
+				} else if(typeof obj[name] == 'string') {
+					obj[name] = [obj[name]]
+					obj[name].push(value)
+				} else {
+					obj[name].push(value) }
+			} else {
+				obj[name] = value } }
+		return obj }
+
+	function getVar(param) {
+		var wl = window.location.href, params = urlDecode(wl.substring(wl.indexOf("?")+1))
+		return(params[param]) }
+
+	getVar("videoid") ? requestVideoId(getVar("videoid"), getVar("search")) : false
+
 	function requestVideoId(videoId, search) {
 		var options = {
 			part: 'snippet,statistics',
 			id: videoId,
 			key: key }
-	    $.get(youtubeApi + "videos", options, function(data) {
+
+	    $.get("https://www.googleapis.com/youtube/v3/videos", options, function(data) {
 			$.each(data.items, function(index, items) {
 				displayResult(items)
 			})
 		})
+
 		function displayResult(videoSnippet) {
-			$('.search-e').append(
-				'<iframe src="' + embedVideo + videoSnippet.id + '?&origin=' + getWindowLocation("search") + '" />' + 
-				'<spam class="video_viewCount">' + 
-					videoSnippet.statistics.viewCount + 
-				'</spam>' + 
-				'<spam class="video_likeCount">' + 
-					videoSnippet.statistics.likeCount + 
-				'</spam>' + 
-				'<spam class="video_dislikeCount">' + 
-					videoSnippet.statistics.dislikeCount + 
-				'</spam>'
-			).prepend(
-				'<x>X</x>'
+			$('.video').prepend(
+				'<x>x</x>'
 			)
-		}
-	}
-	/* Cria um modal com o embed e estatisticas do vídeo */
-
-	/* Mensagem e quantidade de resultados */
-	function displayResultsCount(data) {
-		if (data.pageInfo.totalResults === 0) {
-			var messageResult = "Nada encontrado";
-
-			clearSearch({
-				displayArrowNavigation: false
+			$('.mdl-layout__drawer-button').delay('fast').qcss({
+				color: 'rgb(255,255,255)'
 			})
+			$('.video').append(
 
-//			displayArrowNavigation(false)
+			'<div class="mdl-card mdl-card-video mdl-shadow--2dp">' + 
 
-		} else if (data.pageInfo.totalResults === 1) {
-			var messageResult = "1 Resultado";
-		} else {
-			var messageResult = data.pageInfo.totalResults + " Resultados";
+				'<div class="mdl-card__media" style="background-image: url(https://img.youtube.com/vi/' + videoSnippet.id  + '/0.jpg); min-height: 260px;">' + 
 
-			clearSearch({
-				displayArrowNavigation: true
-			})
+					'<iframe id="ytplayer"' + 
+					'src="https://www.youtube.com/embed/' + videoSnippet.id + '?autoplay=1&origin=' + getVar("search") + '"' + 
+					'frameborder="0"/>' + 
 
-//			displayArrowNavigation(true)
+				'</div>' + 
+
+				'<ul class="counters_modal">' + 
+					'<li class="counters">' + 
+						videoSnippet.statistics.viewCount + 
+						'<spam> Visualições</spam>' + 
+					'</li>' + 
+					'<li class="counters">' + 
+						'<i class="material-icons thumb_alt">thumb_up_alt</i>' + 
+						videoSnippet.statistics.likeCount + 
+					'</li>' + 
+					'<li class="counters">' + 
+						'<i class="material-icons thumb_alt thumb_down_alt">thumb_down_alt</i>' + 
+						videoSnippet.statistics.dislikeCount + 
+					'</li>' + 
+				'</ul>' +
+
+			'</div>'
+
+			)
 
 		}
-		clearSearch({
-			messageResult: messageResult
-		})
-	}
-	/* Mensagem e quantidade de resultados */
 
-	/* insere os botões de paginação*/
-	function arrowPaginations() {
-		$(".search-n").html("").prepend(
-			'<button class="keyboard_arrow_left mdl-button mdl-js-button mdl-button--colored">' + 
-				'<i class="material-icons">keyboard_arrow_left</i>' + 
-			'</button>' + 
-			'<button class="keyboard_arrow_right mdl-button mdl-js-button mdl-button--colored">' + 
-				'<i class="material-icons">keyboard_arrow_right</i>' + 
-			'</button>'
-		)
 	}
-	/* insere os botões de paginação*/
 
-	/* limpa e exibe tela */
-	function clearSearch(clear) {
-		if(clear.Search_r) {
-			$(".search-r").html("")
-		}
-		if(clear.messageResult) {
-			$('.search-r').prepend(clear.messageResult)
-		}
-		console.log(clear.displayArrowNavigation)
-		$('.search-n').delay("fast").qcss({
-			display: clear.displayArrowNavigation ? 'block' : 'none'
-		})
-	}
-	/* limpa e exibe tela */
-
-	/* Toggle do botão de navegação */
-	function displayArrowNavigation(show) {
-		$('.search-n').delay("fast").qcss({
-			display: show ? 'block' : 'none'
-		})
-	}
-	/* Toggle do botão de navegação */
 </script>
