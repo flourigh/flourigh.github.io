@@ -14,19 +14,19 @@
             xmlhttp.open('POST', 'https://webservice.correios.com.br/service/rastro/Rastro.wsdl', true);
 
             var sr =
-                '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.webservice.correios.com.br/">' +
-                '<soapenv:Header/>' +
-                '<soapenv:Body>' +
-                '<res:buscaEventos>' +
-                '<usuario>ECT</usuario>' +
-                '<senha>SRO</senha>' +
-                '<tipo>L</tipo>' +
-                '<resultado>T</resultado>' +
-                '<lingua>101</lingua>' +
-                '<objetos>JT666772488BR</objetos>' +
-                '</res:buscaEventos>' +
-                '</soapenv:Body>' +
-                '</soapenv:Envelope>'
+'<?xml version="1.0" encoding="UTF-8"?>' + 
+'<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://resource.webservice.correios.com.br/">' + 
+  '<SOAP-ENV:Body>' + 
+    '<ns1:buscaEventos>' + 
+      '<usuario>ECT</usuario>' + 
+      '<senha>SRO</senha>' + 
+      '<tipo>L</tipo>' + 
+      '<resultado>T</resultado>' + 
+      '<lingua>101</lingua>' + 
+      '<objetos>JT666772488BR</objetos>' + 
+    '</ns1:buscaEventos>' + 
+  '</SOAP-ENV:Body>' + 
+'</SOAP-ENV:Envelope>'
             ;
 
             xmlhttp.onreadystatechange = function () {
