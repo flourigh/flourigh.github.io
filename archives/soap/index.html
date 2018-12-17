@@ -1,0 +1,51 @@
+<!--form action="https://www2.correios.com.br/sistemas/rastreamento/resultado_semcontent.cfm" method="post" target="_blank">
+<input name="P_LINGUA" value="001" type="hidden">
+<input name="P_TIPO" value="001" type="hidden">
+<input name="objetos">
+<input type="submit" value="Consultar">
+</form-->
+
+<html>
+<head>
+    <title>SOAP JavaScript Client Test</title>
+    <script type="text/javascript">
+        function soap() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('POST', 'https://webservice.correios.com.br/service/rastro/Rastro.wsdl', true);
+
+            var sr =
+                '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:res="http://resource.webservice.correios.com.br/">' +
+                '<soapenv:Header/>' +
+                '<soapenv:Body>' +
+                '<res:buscaEventos>' +
+                '<usuario>ECT</usuario>' +
+                '<senha>SRO</senha>' +
+                '<tipo>L</tipo>' +
+                '<resultado>T</resultado>' +
+                '<lingua>101</lingua>' +
+                '<objetos>JT666772488BR</objetos>' +
+                '</res:buscaEventos>' +
+                '</soapenv:Body>' +
+                '</soapenv:Envelope>'
+            ;
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4) {
+                    if (xmlhttp.status == 200) {
+                        alert('done. use firebug/console to see network response');
+                    }
+                }
+            }
+            xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+            xmlhttp.send(sr);
+        }
+    </script>
+</head>
+<body>
+    <form name="Demo" action="" method="post">
+        <div>
+            <input type="button" value="Soap" onclick="soap();" />
+        </div>
+    </form>
+</body>
+</html>
