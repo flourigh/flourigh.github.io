@@ -1,0 +1,22 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "Desenvolvimento de Aplicações Web e Consultoria",
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "name": "flourigh.github.io",
+  "scripts": {
+  },
+  "stack": "heroku-18"
+}
