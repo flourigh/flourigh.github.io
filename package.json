@@ -1,8 +1,42 @@
 {
+  "name": "roberto-monteiro",
+  "version": "0.0.2",
+  "description": "Desenvolvimento de Aplicações Web e Consultoria em tecnologia",
+  "author": {
+    "name": "Roberto Monteiro",
+    "email": "robertomonteiro@flourigh.com",
+    "url": "https://flourigh.com"
+  },
+  "bugs": "https://github.com/flourigh/flourigh/issues",
+  "homepage": "http://flourigh.com/",
+  "keywords": [
+    "Desenvolvimento",
+    "Aplicativos",
+    "Consultoria",
+    "Tecnologia",
+    "Web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flourigh/flourigh.git"
+  },
+  "private": true,
+  "scripts": {
+    "pack": "clear && npm install && npm update && npm start",
+    "express": "node server.js",
+    "start": "http-server ./"
+  },
   "dependencies": {
+    "http-server": "^0.11.1",
     "express": "^4.16.4"
   },
-  "scripts": {
-    "start": "node server.js"
-  }
+  "engines": {
+    "node": ">= 11.9.0",
+    "npm": ">= 6.7.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
