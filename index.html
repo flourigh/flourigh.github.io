@@ -163,5 +163,15 @@
         $("section.banner img.logotipo, section.container div.close").click(function() {
             $("section.container").toggleClass("hidden") })
         /* Buttons */
+
+        /* Service Worker */
+        if (navigator.serviceWorker.controller) {} else {
+            navigator.serviceWorker.register('sw.js', {
+                scope: './'
+            }).then(function(reg) {
+                // console.log(reg.scope)
+            })
+        }
+        /* Service Worker */
     </script>
 </html>
