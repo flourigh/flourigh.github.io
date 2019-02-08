@@ -165,8 +165,7 @@
         /* Buttons */
 
         /* Service Worker */
-        // if (navigator.serviceWorker.controller) {} else {
-        if ('serviceWorker' in navigator) {
+        if (navigator.serviceWorker.controller) {} else {
             navigator.serviceWorker.register('sw.js', {
                 scope: './'
             }).then(function(reg) {
