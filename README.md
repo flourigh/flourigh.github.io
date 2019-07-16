@@ -2,13 +2,6 @@
 
 # Roberto Monteiro
 
-Email: github@flourigh.com
+[Instagram](https://flourigh.com/instagram)
 
-WhatsApp: [55 21 986 762 331](https://wa.me/5521986762331)
-
-[Facebook](https://flourigh.com/facebook) [Twitter](https://flourigh.com/twitter) [Instagram](https://flourigh.com/instagram) [LinkedIn](https://flourigh.com/linkedin) [Youtube](https://flourigh.com/youtube) [Plus](https://flourigh.com/plus)
-
-Desenvolvedor Web com diploma na instituição Estácio de Sá focado em linguagem BackEnd e admirado por um FrontEnd com design limpo e agradável.
-
-Busco aperfeiçoamento em Git para utilização comercial assim como criação de Containers e distribuição de conteúdo dinâmico e responsivo.
-Buscar o novo é um rumo que deve ser tomado.
+Estudante de tecnologia, apaixonado por programação, conhecedor de tecnologias Backend e atuando em tecnologias Frontend, gosto muito de desenvolver aplicações
